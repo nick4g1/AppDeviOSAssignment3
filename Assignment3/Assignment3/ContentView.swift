@@ -6,16 +6,36 @@
 //
 
 import SwiftUI
+import GoogleSignInSwift
 
 struct ContentView: View {
+
+    @State private var username: String = ""
+    @State private var password: String = ""
+    @State private var isNavigating: Bool = false
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        ZStack {
+            Color(red: 0.4, green: 0.4, blue: 0.4).edgesIgnoringSafeArea(.all)
+            VStack {
+                Text("Split | Mate")
+                    .font(.largeTitle)
+                    .foregroundColor(.white)
+                    .padding(.top)
+                Spacer()
+                GoogleSignInButton(action: {
+                print("Signed in")})
+                .padding(.all)
+                .padding(.bottom)
+            }
         }
-        .padding()
+    }
+}
+
+struct NextView: View {
+    var body: some View {
+        Text("Welcome!")
+            .font(.largeTitle)
+            .padding()
     }
 }
 

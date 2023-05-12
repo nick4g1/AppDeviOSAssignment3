@@ -9,10 +9,20 @@ import SwiftUI
 import GoogleSignIn
 import GoogleSignInSwift
 
+@MainActor
+final class AuthenticationViewModel: ObservableObject {
+    
+    func signInGoogle() async throws {
+        let helper = GoogleSignInHelper()
+        let tokens = try await helper.signInGoogle()
+        try await AuthenticationManager.shared.signInWithGoogle(tokens: tokens)
+    }
+}
+
 struct AuthenticationView: View {
     
     @Binding var showSignInView: Bool
-    @StateObject private var viewModel = AuthenticationHandler()
+    @StateObject private var viewModel = AuthenticationViewModel()
     var body: some View {
             ZStack {
                 ColorUtils.backgroundColor.edgesIgnoringSafeArea(.all)
@@ -26,7 +36,7 @@ struct AuthenticationView: View {
                         .font(.title)
                         .foregroundColor(.white)
                     Spacer()
-                    GoogleSignInButton(viewModel: GoogleSignInButtonViewModel(scheme: .light, style: .wide, state: .normal)) {
+                    Button{
                         Task {
                             do {
                                 try await viewModel.signInGoogle()
@@ -35,10 +45,24 @@ struct AuthenticationView: View {
                                 print(error)
                             }
                         }
+                    } label: {
+                        HStack {
+                            Image("GoogleLogo")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 20)// SF Symbols image
+                            Text("Sign In With Google")
+                                .font(.headline)
+                                .foregroundColor(.white)
+                        }
+                        .frame(height: 55)
+                        .frame(maxWidth: .infinity)
+                        .background(Color.black)
+                        .cornerRadius(10)
+                        .shadow(radius: 20)
+                        .padding(.horizontal)
+                        .foregroundColor(.white)
                     }
-                    .padding(.horizontal)
-                    .cornerRadius(10)
-                    
                     NavigationLink {
                         EmailSignInView(showSignInView: $showSignInView)
                     } label: {

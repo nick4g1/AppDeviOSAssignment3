@@ -14,9 +14,11 @@ struct GoogleSignInResultModel {
     let accessToken: String
 }
 
-@MainActor
-final class AuthenticationHandler:ObservableObject {
-    func signInGoogle() async throws {
+
+final class GoogleSignInHelper {
+    
+    @MainActor
+    func signInGoogle() async throws -> GoogleSignInResultModel {
         guard let topVC = ViewUtils.shared.topViewController() else {
             throw URLError(.cannotFindHost)
         }
@@ -28,6 +30,6 @@ final class AuthenticationHandler:ObservableObject {
         let accessToken: String = gidSignInResult.user.accessToken.tokenString
         
         let tokens = GoogleSignInResultModel(idToken: idToken, accessToken: accessToken)
-        try await AuthenticationManager.shared.signInWithGoogle(tokens: tokens)
+        return tokens
     }
 }

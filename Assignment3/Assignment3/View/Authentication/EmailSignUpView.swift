@@ -25,14 +25,17 @@ struct EmailSignUpView: View {
                     .background(Color.white)
                     .cornerRadius(10)
                     .autocapitalization(.none)
+                    .foregroundColor(.black)
                 SecureField("Password", text: $password)
                     .padding()
                     .background(Color.white)
                     .cornerRadius(10)
+                    .foregroundColor(.black)
                 SecureField("Re-enter Password", text: $passwordCheck)
                     .padding()
                     .background(Color.white)
                     .cornerRadius(10)
+                    .foregroundColor(.black)
                 Button {
                     Task {
                         do {

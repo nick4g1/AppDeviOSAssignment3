@@ -22,11 +22,13 @@ struct EmailSignInView: View {
                 TextField("Email...", text: $email)
                     .padding()
                     .background(Color.white)
+                    .foregroundColor(.black)
                     .cornerRadius(10)
                     .autocapitalization(.none)
                 SecureField("Password...", text: $password)
                     .padding()
                     .background(Color.white)
+                    .foregroundColor(.black)
                     .cornerRadius(10)
                 Button {
                     Task {
@@ -53,7 +55,7 @@ struct EmailSignInView: View {
                         .foregroundColor(.white)
                         .frame(height: 55)
                         .frame(maxWidth: 200)
-                        .background(Color.black)
+                        .background(.black)
                         .cornerRadius(10)
                 }
                 Spacer()

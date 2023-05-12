@@ -13,7 +13,7 @@ struct EmailSignInView: View {
     @State private var email = ""
     @State private var password = ""
     
-    @State private var viewModel = EmailAuthenticationHandler()
+    let viewModel = EmailAuthenticationHandler()
     
     var body: some View {
         ZStack {

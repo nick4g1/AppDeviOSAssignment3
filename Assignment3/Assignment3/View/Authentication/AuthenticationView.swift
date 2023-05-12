@@ -6,15 +6,30 @@
 //
 
 import SwiftUI
+import GoogleSignIn
+import GoogleSignInSwift
 
 struct AuthenticationView: View {
     
     @Binding var showSignInView: Bool
+    @StateObject private var viewModel = AuthenticationHandler()
     var body: some View {
             ZStack {
                 ColorUtils.backgroundColor.edgesIgnoringSafeArea(.all)
                 VStack {
                     Spacer()
+                    GoogleSignInButton(viewModel: GoogleSignInButtonViewModel(scheme: .light, style: .wide, state: .normal)) {
+                        Task {
+                            do {
+                                try await viewModel.signInGoogle()
+                                showSignInView = false
+                            } catch {
+                                print(error)
+                            }
+                        }
+                    }
+                    .padding()
+                    .shadow(radius: 20)
                     NavigationLink {
                         EmailSignInView(showSignInView: $showSignInView)
                     } label: {
@@ -22,10 +37,11 @@ struct AuthenticationView: View {
                             .font(.headline)
                             .foregroundColor(.white)
                             .frame(height: 55)
-                            .frame(maxWidth: 200)
+                            .frame(maxWidth: .infinity)
                             .background(Color.black)
                             .cornerRadius(10)
                             .shadow(radius: 20)
+                            .padding()
                     }
                 }
             }

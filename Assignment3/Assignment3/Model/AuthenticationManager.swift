@@ -43,11 +43,13 @@ final class AuthenticationManager {
         return AuthDataResultModel(user: authDataResult.user)
     }
     
+    // Sign in with email and password
     func signInUser(email: String, password:String) async throws -> AuthDataResultModel {
         let authDataResult = try await Auth.auth().signIn(withEmail: email, password: password)
         return AuthDataResultModel(user: authDataResult.user)
     }
     
+    // Sign in with Google using credential token
     @discardableResult
     func signInWithGoogle(tokens: GoogleSignInResultModel) async throws -> AuthDataResultModel {
         let credential = GoogleAuthProvider.credential(withIDToken: tokens.idToken, accessToken: tokens.accessToken)

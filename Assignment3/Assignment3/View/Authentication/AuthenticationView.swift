@@ -17,6 +17,14 @@ struct AuthenticationView: View {
             ZStack {
                 ColorUtils.backgroundColor.edgesIgnoringSafeArea(.all)
                 VStack {
+                    Image("Logo")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 150)
+                        .shadow(radius: 20)
+                    Text("Split Mate")
+                        .font(.title)
+                        .foregroundColor(.white)
                     Spacer()
                     GoogleSignInButton(viewModel: GoogleSignInButtonViewModel(scheme: .light, style: .wide, state: .normal)) {
                         Task {
@@ -28,8 +36,9 @@ struct AuthenticationView: View {
                             }
                         }
                     }
-                    .padding()
-                    .shadow(radius: 20)
+                    .padding(.horizontal)
+                    .cornerRadius(10)
+                    
                     NavigationLink {
                         EmailSignInView(showSignInView: $showSignInView)
                     } label: {
@@ -45,7 +54,6 @@ struct AuthenticationView: View {
                     }
                 }
             }
-            .navigationTitle("Sign In")
     }
 }
 

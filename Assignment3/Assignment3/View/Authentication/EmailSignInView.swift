@@ -18,11 +18,12 @@ struct EmailSignInView: View {
     var body: some View {
         ZStack {
             ColorUtils.backgroundColor.edgesIgnoringSafeArea(.all)
-            VStack {
+            VStack(spacing: 20) {
                 TextField("Email...", text: $email)
                     .padding()
                     .background(Color.white)
                     .cornerRadius(10)
+                    .autocapitalization(.none)
                 SecureField("Password...", text: $password)
                     .padding()
                     .background(Color.white)
@@ -49,8 +50,11 @@ struct EmailSignInView: View {
                     EmailSignUpView(showSignInView: $showSignInView)
                 } label: {
                     Text("Don't have an account?")
-                        .padding()
                         .foregroundColor(.white)
+                        .frame(height: 55)
+                        .frame(maxWidth: 200)
+                        .background(Color.black)
+                        .cornerRadius(10)
                 }
                 Spacer()
             }

@@ -7,40 +7,14 @@
 
 import SwiftUI
 
-final class EmailSignInViewModel: ObservableObject {
-    @Published var email = ""
-    @Published var password = ""
-    
-    func signIn() {
-        // Add validation here
-        guard !email.isEmpty, !password.isEmpty else {
-            print("No email or password found")
-            return
-        }
-        
-        guard password.count > 5 else {
-            print("Password is too short")
-            return
-        }
-        
-        Task {
-            do {
-                let returnUserData = try await AuthenticationManager.shared.createUser(email: email, password: password)
-                print("Success")
-                print(returnUserData)
-            } catch {
-                print("Error \(error)")
-            }
-        }
-    }
-}
-
 struct EmailSignInView: View {
     
+    @Binding var showSignInView: Bool
     @State private var email = ""
     @State private var password = ""
     
-    @State private var viewModel = EmailSignInViewModel()
+    @State private var viewModel = EmailAuthenticationHandler()
+    
     var body: some View {
         ZStack {
             ColorUtils.backgroundColor.edgesIgnoringSafeArea(.all)
@@ -48,13 +22,20 @@ struct EmailSignInView: View {
                 TextField("Email...", text: $email)
                     .padding()
                     .background(Color.white)
-                    .cornerRadius(5)
+                    .cornerRadius(10)
                 SecureField("Password...", text: $password)
                     .padding()
                     .background(Color.white)
                     .cornerRadius(10)
                 Button {
-                    viewModel.signIn()
+                    Task {
+                        do {
+                            try await viewModel.signIn(email: email, password: password)
+                            showSignInView = false
+                        } catch {
+                            print(error)
+                        }
+                    }
                 } label: {
                     Text("Sign In With Email")
                         .font(.headline)
@@ -63,6 +44,13 @@ struct EmailSignInView: View {
                         .frame(maxWidth: 200)
                         .background(Color.black)
                         .cornerRadius(10)
+                }
+                NavigationLink {
+                    EmailSignUpView(showSignInView: $showSignInView)
+                } label: {
+                    Text("Don't have an account?")
+                        .padding()
+                        .foregroundColor(.white)
                 }
                 Spacer()
             }
@@ -75,7 +63,7 @@ struct EmailSignInView: View {
 struct EmailSignInView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
-            EmailSignInView()
+            EmailSignInView(showSignInView: .constant(false))
         }
     }
 }

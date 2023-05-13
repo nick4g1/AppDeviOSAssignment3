@@ -29,6 +29,8 @@
 		9BA63AFB2A0A184300CE3AA8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BA63AFA2A0A184300CE3AA8 /* Preview Assets.xcassets */; };
 		9BA63B032A0A35A600CE3AA8 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 9BA63B022A0A35A600CE3AA8 /* GoogleSignIn */; };
 		9BA63B052A0A35A600CE3AA8 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 9BA63B042A0A35A600CE3AA8 /* GoogleSignInSwift */; };
+		C612616F2A0F2C1D00E083EA /* SendMoneyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C612616E2A0F2C1D00E083EA /* SendMoneyView.swift */; };
+		C61261712A0F457E00E083EA /* SendMoneyNumberPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61261702A0F457E00E083EA /* SendMoneyNumberPad.swift */; };
 		9BC24CD52A0F2C1800DC61F3 /* SplitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC24CD42A0F2C1800DC61F3 /* SplitView.swift */; };
 		9BC24CD72A0F37E300DC61F3 /* Friends.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC24CD62A0F37E300DC61F3 /* Friends.swift */; };
 		9BC24CDA2A0F38B300DC61F3 /* Fakery in Frameworks */ = {isa = PBXBuildFile; productRef = 9BC24CD92A0F38B300DC61F3 /* Fakery */; };
@@ -55,6 +57,8 @@
 		9BA63AF32A0A184200CE3AA8 /* Assignment3App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assignment3App.swift; sourceTree = "<group>"; };
 		9BA63AF72A0A184300CE3AA8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9BA63AFA2A0A184300CE3AA8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C612616E2A0F2C1D00E083EA /* SendMoneyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMoneyView.swift; sourceTree = "<group>"; };
+		C61261702A0F457E00E083EA /* SendMoneyNumberPad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMoneyNumberPad.swift; sourceTree = "<group>"; };
 		9BC24CD42A0F2C1800DC61F3 /* SplitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitView.swift; sourceTree = "<group>"; };
 		9BC24CD62A0F37E300DC61F3 /* Friends.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friends.swift; sourceTree = "<group>"; };
 		9BC24CDB2A0F499700DC61F3 /* FriendScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendScrollView.swift; sourceTree = "<group>"; };
@@ -100,11 +104,12 @@
 				9B5271AC2A0E080B00043141 /* Authentication */,
 				9B5271A02A0DDB5500043141 /* InitialView.swift */,
 				9B5271A32A0DDE2F00043141 /* MainMenuView.swift */,
+				C612616E2A0F2C1D00E083EA /* SendMoneyView.swift */,
+				C61261702A0F457E00E083EA /* SendMoneyNumberPad.swift */,
 				3AED06222A0F2C3200FAF7DA /* RequestView.swift */,
 				3AED06242A0F3A9700FAF7DA /* ConfirmationView.swift */,
 				9BC24CD42A0F2C1800DC61F3 /* SplitView.swift */,
 				9BC24CDB2A0F499700DC61F3 /* FriendScrollView.swift */,
-        main
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -257,6 +262,7 @@
 			files = (
 				3AED06232A0F2C3200FAF7DA /* RequestView.swift in Sources */,
 				9B5271A92A0E015D00043141 /* EmailAuthenticationHandler.swift in Sources */,
+				C612616F2A0F2C1D00E083EA /* SendMoneyView.swift in Sources */,
 				9BC24CD72A0F37E300DC61F3 /* Friends.swift in Sources */,
 				9B5271A12A0DDB5500043141 /* InitialView.swift in Sources */,
 				9B4C80C02A0E18FC00CE81BA /* ViewUtils.swift in Sources */,
@@ -266,6 +272,7 @@
 				9BC24CD52A0F2C1800DC61F3 /* SplitView.swift in Sources */,
 				9B52719B2A0DCC7100043141 /* ColorUtils.swift in Sources */,
 				9BA63AF42A0A184200CE3AA8 /* Assignment3App.swift in Sources */,
+				C61261712A0F457E00E083EA /* SendMoneyNumberPad.swift in Sources */,
 				3AED06252A0F3A9700FAF7DA /* ConfirmationView.swift in Sources */,
 				9B5271962A0DC97A00043141 /* AuthenticationView.swift in Sources */,
 				9BC24CDC2A0F499700DC61F3 /* FriendScrollView.swift in Sources */,

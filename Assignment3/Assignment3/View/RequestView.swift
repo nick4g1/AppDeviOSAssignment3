@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct RequestView: View {
-    
-//    @Binding var showRequestView: Bool
-    @State private var totalCost =  0.0
+    //@Binding private var passTotalAmount = 0.0
+    //@State private var selectedPage: Page = RequestView()
+    @State private var amount = 0.0
+    @State private var selectedFriends: Set<String> = []
+    let friends = Friends().generateFriends()
     
     var body: some View {
         ZStack {
@@ -25,7 +27,7 @@ struct RequestView: View {
                 Text("ENTER AN AMOUNT")
 //                    .frame(maxWidth: .leading)
 
-                TextField("Amount", value: $totalCost, format: .currency(code: "USD"))
+                TextField("Amount", value: $amount, format: .currency(code: "USD"))
                     .multilineTextAlignment(.center)
                     .font(.headline)
                     //.foregroundColor(.white)
@@ -37,21 +39,22 @@ struct RequestView: View {
                     .padding(.horizontal)
                     .keyboardType(.decimalPad)
                 // Here comes the scrollstack
-                
+                FriendsScrollView(amount: $amount, selectedFriends: $selectedFriends, friends: friends)
                 //
                 Spacer()
-                NavigationLink {
-                    // Link to split view
-                    ConfirmationView() 
-                } label: {
-                    Text("Request")
-                        .headingLabelStyle()
-                }
+                NavigationLink(
+                    destination: ConfirmationView(amount: $amount),
+                    label: {
+                        Text("Request")
+                            .headingLabelStyle()
+                    }
+                )
 
             }
 
         }
             .navigationTitle("REQUEST")
+        
         
     }
 }

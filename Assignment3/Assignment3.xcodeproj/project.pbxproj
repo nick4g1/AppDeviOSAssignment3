@@ -23,7 +23,6 @@
 		9B5271A92A0E015D00043141 /* EmailAuthenticationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5271A82A0E015D00043141 /* EmailAuthenticationHandler.swift */; };
 		9B5271AB2A0E05B900043141 /* EmailSignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5271AA2A0E05B900043141 /* EmailSignUpView.swift */; };
 		9BA63AF42A0A184200CE3AA8 /* Assignment3App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA63AF32A0A184200CE3AA8 /* Assignment3App.swift */; };
-		9BA63AF62A0A184200CE3AA8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA63AF52A0A184200CE3AA8 /* ContentView.swift */; };
 		9BA63AF82A0A184300CE3AA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BA63AF72A0A184300CE3AA8 /* Assets.xcassets */; };
 		9BA63AFB2A0A184300CE3AA8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BA63AFA2A0A184300CE3AA8 /* Preview Assets.xcassets */; };
 		9BA63B032A0A35A600CE3AA8 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 9BA63B022A0A35A600CE3AA8 /* GoogleSignIn */; };
@@ -46,7 +45,6 @@
 		9B5271AA2A0E05B900043141 /* EmailSignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSignUpView.swift; sourceTree = "<group>"; };
 		9BA63AF02A0A184200CE3AA8 /* Assignment3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Assignment3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BA63AF32A0A184200CE3AA8 /* Assignment3App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assignment3App.swift; sourceTree = "<group>"; };
-		9BA63AF52A0A184200CE3AA8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9BA63AF72A0A184300CE3AA8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9BA63AFA2A0A184300CE3AA8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -139,7 +137,6 @@
 				9B5271A22A0DDE1800043141 /* View */,
 				9B5271992A0DCC5D00043141 /* Utils */,
 				9BA63AF32A0A184200CE3AA8 /* Assignment3App.swift */,
-				9BA63AF52A0A184200CE3AA8 /* ContentView.swift */,
 				9B5271882A0D090600043141 /* GoogleService-Info.plist */,
 				9BA63AF72A0A184300CE3AA8 /* Assets.xcassets */,
 				9BA63AF92A0A184300CE3AA8 /* Preview Content */,
@@ -238,7 +235,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9BA63AF62A0A184200CE3AA8 /* ContentView.swift in Sources */,
 				9B5271A92A0E015D00043141 /* EmailAuthenticationHandler.swift in Sources */,
 				9B5271A12A0DDB5500043141 /* InitialView.swift in Sources */,
 				9B4C80C02A0E18FC00CE81BA /* ViewUtils.swift in Sources */,

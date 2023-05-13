@@ -10,7 +10,7 @@ import Foundation
 final class EmailAuthenticationHandler {
     
     func signUp(email: String, password: String, passwordCheck: String) async throws {
-        // Add validation here
+        // TODO: Add validation here
         guard !email.isEmpty, !password.isEmpty else {
             print("No email or password found")
             return

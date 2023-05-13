@@ -56,11 +56,13 @@ final class AuthenticationManager {
         return try await signInWithCredential(credential: credential)
     }
     
+    // Sign in with crdential function used with Google + Apple sign in
     func signInWithCredential(credential: AuthCredential) async throws -> AuthDataResultModel {
         let authDataResult = try await Auth.auth().signIn(with: credential)
         return AuthDataResultModel(user: authDataResult.user)
     }
     
+    // TODO: Function to reset password NOT IMPLEMENTED
     func resetPassword(email: String) async throws {
         try await Auth.auth().sendPasswordReset(withEmail: email)
     }

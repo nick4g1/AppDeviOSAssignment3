@@ -39,7 +39,7 @@ struct MainMenuView: View {
                         .shadow(radius: 20)
                 }
                 NavigationLink {
-                    // Link to send view
+                    SendMoneyView()
                 } label: {
                     Text("Send")
                         .font(.headline)

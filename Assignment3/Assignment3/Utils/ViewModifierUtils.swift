@@ -22,6 +22,20 @@ struct HeadingLabelStyle: ViewModifier {
     }
 }
 
+struct SendReceiveLabelStyle: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .font(.headline)
+            .foregroundColor(.white)
+            .frame(height: 55)
+            .frame(maxWidth: 300)
+            .background(Color.green)
+            .cornerRadius(10)
+            .shadow(radius: 20)
+            .padding(.horizontal)
+    }
+}
+
 struct SubHeadingLabelStyle: ViewModifier {
     func body(content: Content) -> some View {
         content
@@ -58,5 +72,8 @@ extension View {
     
     func textFieldStyle() -> some View {
         self.modifier(TextFieldStyle())
+    }
+    func sendReceiveStyle() -> some View {
+        self.modifier(SendReceiveLabelStyle())
     }
 }

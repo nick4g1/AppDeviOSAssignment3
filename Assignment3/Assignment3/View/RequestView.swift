@@ -27,19 +27,10 @@ struct RequestView: View {
                 Text("ENTER AN AMOUNT")
 //                    .frame(maxWidth: .leading)
 
-                TextField("Amount", value: $amount, format: .currency(code: "USD"))
-                    .multilineTextAlignment(.center)
-                    .font(.headline)
-                    //.foregroundColor(.white)
-                    .frame(height: 55)
-                    .frame(maxWidth: 400)
-                    .background(.white)
-                    .cornerRadius(10)
-                    .shadow(radius: 10)
-                    .padding(.horizontal)
-                    .keyboardType(.decimalPad)
+                TextField("Amount", value: $amount, format: .currency(code: "AUD"))
+                    .numberFieldStyle()
                 // Here comes the scrollstack
-                FriendsScrollView(amount: $amount, selectedFriends: $selectedFriends, friends: friends)
+                FriendsScrollView(amount: $amount, selectedFriends: $selectedFriends, friends: friends, toSplit: false)
                 //
                 Spacer()
                 NavigationLink(

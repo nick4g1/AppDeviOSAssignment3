@@ -58,6 +58,7 @@ struct TextFieldStyle: ViewModifier {
             .foregroundColor(.black)
             .cornerRadius(10)
             .padding(.horizontal)
+            .autocapitalization(.none)
     }
 }
 

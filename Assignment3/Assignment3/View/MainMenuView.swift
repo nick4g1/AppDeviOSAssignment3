@@ -15,7 +15,7 @@ struct MainMenuView: View {
             VStack(spacing: 20) {
                 Spacer()
                 NavigationLink {
-                    // Link to split view
+                    SplitView()
                 } label: {
                     Text("Split")
                         .font(.headline)
@@ -85,13 +85,7 @@ struct MainMenuView: View {
                     }
                 } label: {
                     Text("Logout")
-                        .font(.headline)
-                        .foregroundColor(.white)
-                        .frame(height: 55)
-                        .frame(maxWidth: 200)
-                        .background(Color.black)
-                        .cornerRadius(10)
-                        .shadow(radius: 20)
+                        .headingLabelStyle()
                 }
             }
         }

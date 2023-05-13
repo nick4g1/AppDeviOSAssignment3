@@ -17,8 +17,11 @@ struct InitialView: View {
         
         //Inital view shows the menu view if user is signed in and passes that binding to the view
         ZStack {
-            NavigationStack {
-                MainMenuView(showSignInView: $showSignInView)
+            if !showSignInView {
+                NavigationStack {
+                    MainMenuView(showSignInView: $showSignInView)
+            }
+           
             }
         }
         // When view appears tries to retrieve signed in user from local storage

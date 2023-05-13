@@ -12,6 +12,8 @@ import GoogleSignInSwift
 struct GoogleSignInResultModel {
     let idToken: String
     let accessToken: String
+    let name: String?
+    let email: String?
 }
 
 
@@ -28,8 +30,10 @@ final class GoogleSignInHelper {
             throw URLError(.badServerResponse)
         }
         let accessToken: String = gidSignInResult.user.accessToken.tokenString
+        let name = gidSignInResult.user.profile?.givenName
+        let email = gidSignInResult.user.profile?.email
         
-        let tokens = GoogleSignInResultModel(idToken: idToken, accessToken: accessToken)
+        let tokens = GoogleSignInResultModel(idToken: idToken, accessToken: accessToken, name: name, email: email)
         return tokens
     }
 }

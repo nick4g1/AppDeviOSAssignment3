@@ -20,16 +20,9 @@ struct EmailSignInView: View {
             ColorUtils.backgroundColor.edgesIgnoringSafeArea(.all)
             VStack(spacing: 20) {
                 TextField("Email...", text: $email)
-                    .padding()
-                    .background(Color.white)
-                    .foregroundColor(.black)
-                    .cornerRadius(10)
-                    .autocapitalization(.none)
+                    .textFieldStyle()
                 SecureField("Password...", text: $password)
-                    .padding()
-                    .background(Color.white)
-                    .foregroundColor(.black)
-                    .cornerRadius(10)
+                    .textFieldStyle()
                 Button {
                     Task {
                         do {
@@ -41,26 +34,16 @@ struct EmailSignInView: View {
                     }
                 } label: {
                     Text("Sign In With Email")
-                        .font(.headline)
-                        .foregroundColor(.white)
-                        .frame(height: 55)
-                        .frame(maxWidth: 200)
-                        .background(Color.black)
-                        .cornerRadius(10)
+                        .headingLabelStyle()
                 }
                 NavigationLink {
                     EmailSignUpView(showSignInView: $showSignInView)
                 } label: {
                     Text("Don't have an account?")
-                        .foregroundColor(.white)
-                        .frame(height: 55)
-                        .frame(maxWidth: 200)
-                        .background(.black)
-                        .cornerRadius(10)
+                        .subHeadingLabelStyle()
                 }
                 Spacer()
             }
-            .padding()
         }
         .navigationTitle("Sign In With Email")
     }

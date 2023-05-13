@@ -26,7 +26,7 @@ struct AuthenticationView: View {
     var body: some View {
             ZStack {
                 ColorUtils.backgroundColor.edgesIgnoringSafeArea(.all)
-                VStack {
+                VStack(spacing:20) {
                     Image("Logo")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
@@ -67,14 +67,7 @@ struct AuthenticationView: View {
                         EmailSignInView(showSignInView: $showSignInView)
                     } label: {
                         Text("Sign In With Email")
-                            .font(.headline)
-                            .foregroundColor(.white)
-                            .frame(height: 55)
-                            .frame(maxWidth: .infinity)
-                            .background(Color.black)
-                            .cornerRadius(10)
-                            .shadow(radius: 20)
-                            .padding()
+                            .headingLabelStyle()
                     }
                 }
             }

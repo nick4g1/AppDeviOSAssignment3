@@ -24,6 +24,12 @@ struct SplitView: View {
                         .padding()
                 }
                 FriendsScrollView(amount: $amount, selectedFriends: $selectedFriends, friends: friends)
+                NavigationLink {
+                    MainMenuView(showSignInView: .constant(false))
+                } label: {
+                    Text("Confirm")
+                        .headingLabelStyle()
+                }
             }
         }
     }

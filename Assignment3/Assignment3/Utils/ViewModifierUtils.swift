@@ -12,10 +12,24 @@ struct HeadingLabelStyle: ViewModifier {
     func body(content: Content) -> some View {
         content
             .font(.headline)
-            .foregroundColor(.white)
+            .foregroundColor(ColorUtils.textColour)
             .frame(height: 55)
             .frame(maxWidth: .infinity)
-            .background(.black)
+            .background(ColorUtils.buttonBackgroundColour)
+            .cornerRadius(10)
+            .shadow(radius: 10)
+            .padding(.horizontal)
+    }
+}
+
+struct ConfirmLabelStyle: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .font(.headline)
+            .foregroundColor(ColorUtils.textColour)
+            .frame(height: 55)
+            .frame(maxWidth: .infinity)
+            .background(.green)
             .cornerRadius(10)
             .shadow(radius: 10)
             .padding(.horizontal)
@@ -40,10 +54,10 @@ struct SubHeadingLabelStyle: ViewModifier {
     func body(content: Content) -> some View {
         content
             .font(.caption)
-            .foregroundColor(.white)
+            .foregroundColor(ColorUtils.textColour)
             .frame(height: 55)
             .frame(maxWidth: .infinity)
-            .background(.black)
+            .background(ColorUtils.backgroundColor)
             .cornerRadius(10)
             .shadow(radius: 10)
             .padding(.horizontal)
@@ -62,6 +76,21 @@ struct TextFieldStyle: ViewModifier {
     }
 }
 
+struct NumberFieldStyle: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .multilineTextAlignment(.center)
+            .font(.headline)
+            .frame(height: 55)
+            .frame(maxWidth: 150)
+            .background(.white)
+            .cornerRadius(10)
+            .shadow(radius: 10)
+            .padding(.horizontal)
+            .keyboardType(.decimalPad)
+    }
+}
+
 extension View {
     func headingLabelStyle() -> some View {
         self.modifier(HeadingLabelStyle())
@@ -77,4 +106,13 @@ extension View {
     func sendReceiveStyle() -> some View {
         self.modifier(SendReceiveLabelStyle())
     }
+    
+    func confirmLabelStyle() -> some View {
+        self.modifier(ConfirmLabelStyle())
+    }
+    
+    func numberFieldStyle() -> some View {
+        self.modifier(NumberFieldStyle())
+    }
+
 }

@@ -33,7 +33,7 @@ struct AuthenticationView: View {
                         .frame(width: 150)
                         .shadow(radius: 20)
                     Text("Split Mate")
-                        .font(.title)
+                        .font(.custom("System", size: 50))
                         .foregroundColor(.white)
                     Spacer()
                     Button{
@@ -53,7 +53,7 @@ struct AuthenticationView: View {
                                 .frame(width: 20)// SF Symbols image
                             Text("Sign In With Google")
                                 .font(.headline)
-                                .foregroundColor(.white)
+                                .foregroundColor(ColorUtils.textColour)
                         }
                         .headingLabelStyle()
                     }

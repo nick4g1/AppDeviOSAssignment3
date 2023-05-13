@@ -28,6 +28,7 @@ struct MainMenuView: View {
                 }
                 NavigationLink {
                     // Link to request view
+                    RequestView()
                 } label: {
                     Text("Request")
                         .font(.headline)

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3AED06232A0F2C3200FAF7DA /* RequestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AED06222A0F2C3200FAF7DA /* RequestView.swift */; };
+		3AED06252A0F3A9700FAF7DA /* ConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AED06242A0F3A9700FAF7DA /* ConfirmationView.swift */; };
 		9B4C80BE2A0E174000CE81BA /* GoogleSignInHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4C80BD2A0E174000CE81BA /* GoogleSignInHelper.swift */; };
 		9B4C80C02A0E18FC00CE81BA /* ViewUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4C80BF2A0E18FC00CE81BA /* ViewUtils.swift */; };
 		9B5271892A0D090600043141 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9B5271882A0D090600043141 /* GoogleService-Info.plist */; };
@@ -30,6 +32,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3AED06222A0F2C3200FAF7DA /* RequestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestView.swift; sourceTree = "<group>"; };
+		3AED06242A0F3A9700FAF7DA /* ConfirmationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationView.swift; sourceTree = "<group>"; };
 		9B4C80BC2A0E13F500CE81BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		9B4C80BD2A0E174000CE81BA /* GoogleSignInHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSignInHelper.swift; sourceTree = "<group>"; };
 		9B4C80BF2A0E18FC00CE81BA /* ViewUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewUtils.swift; sourceTree = "<group>"; };
@@ -88,6 +92,8 @@
 				9B5271AC2A0E080B00043141 /* Authentication */,
 				9B5271A02A0DDB5500043141 /* InitialView.swift */,
 				9B5271A32A0DDE2F00043141 /* MainMenuView.swift */,
+				3AED06222A0F2C3200FAF7DA /* RequestView.swift */,
+				3AED06242A0F3A9700FAF7DA /* ConfirmationView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -235,6 +241,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AED06232A0F2C3200FAF7DA /* RequestView.swift in Sources */,
 				9B5271A92A0E015D00043141 /* EmailAuthenticationHandler.swift in Sources */,
 				9B5271A12A0DDB5500043141 /* InitialView.swift in Sources */,
 				9B4C80C02A0E18FC00CE81BA /* ViewUtils.swift in Sources */,
@@ -243,6 +250,7 @@
 				9B5271A42A0DDE2F00043141 /* MainMenuView.swift in Sources */,
 				9B52719B2A0DCC7100043141 /* ColorUtils.swift in Sources */,
 				9BA63AF42A0A184200CE3AA8 /* Assignment3App.swift in Sources */,
+				3AED06252A0F3A9700FAF7DA /* ConfirmationView.swift in Sources */,
 				9B5271962A0DC97A00043141 /* AuthenticationView.swift in Sources */,
 				9B52719F2A0DCFE900043141 /* AuthenticationManager.swift in Sources */,
 				9B5271982A0DCBA100043141 /* EmailSignInView.swift in Sources */,

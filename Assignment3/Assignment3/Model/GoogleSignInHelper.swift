@@ -17,6 +17,7 @@ struct GoogleSignInResultModel {
     let email: String?
 }
 
+
 // Helper class for Google Signin
 final class GoogleSignInHelper {
     

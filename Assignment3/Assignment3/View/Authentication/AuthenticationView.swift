@@ -55,13 +55,7 @@ struct AuthenticationView: View {
                                 .font(.headline)
                                 .foregroundColor(.white)
                         }
-                        .frame(height: 55)
-                        .frame(maxWidth: .infinity)
-                        .background(Color.black)
-                        .cornerRadius(10)
-                        .shadow(radius: 20)
-                        .padding(.horizontal)
-                        .foregroundColor(.white)
+                        .headingLabelStyle()
                     }
                     NavigationLink {
                         EmailSignInView(showSignInView: $showSignInView)

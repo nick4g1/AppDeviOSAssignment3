@@ -8,13 +8,14 @@
 import SwiftUI
 
 struct SendMoneyNumberPad: View {
-    @State private var amount = ""
+    @State private var amount = "$"
     @State private var amountDouble = 0.0
     var body: some View {
         ZStack {
             ColorUtils.backgroundColor.edgesIgnoringSafeArea(.all)
             VStack(){
-                Text(amount)
+                Spacer()
+                Text(amount).frame(width: 300, height: 100, alignment: .center).font(.system(size: 35))
                 Spacer()
                 //Number Pad
                 HStack(){
@@ -24,21 +25,31 @@ struct SendMoneyNumberPad: View {
                         amount = amount + "1"
                     }) {
                         Text("1")
-                    }
-                    Spacer()
+                            .padding(.horizontal, 50)
+                            .padding(.vertical, 25)
+                    }.foregroundColor(.white)
+                        .background(.green)
+                        .cornerRadius(10)
                     // 2 Number Button
                     Button(action: {
                         amount = amount + "2"
                     }) {
                         Text("2")
-                    }
-                    Spacer()
+                            .padding(.horizontal, 50)
+                            .padding(.vertical, 25)
+                    }.foregroundColor(.white)
+                        .background(.green)
+                        .cornerRadius(10)
                     // 3 Number Button
                     Button(action: {
                         amount = amount + "3"
                     }) {
                         Text("3")
-                    }
+                            .padding(.horizontal, 50)
+                            .padding(.vertical, 25)
+                    }.foregroundColor(.white)
+                        .background(.green)
+                        .cornerRadius(10)
                     Spacer()
                 }
                 HStack(){
@@ -48,21 +59,31 @@ struct SendMoneyNumberPad: View {
                         amount = amount + "4"
                     }) {
                         Text("4")
-                    }
-                    Spacer()
+                            .padding(.horizontal, 50)
+                            .padding(.vertical, 25)
+                    }.foregroundColor(.white)
+                        .background(.green)
+                        .cornerRadius(10)
                     // 5 Number Button
                     Button(action: {
                         amount = amount + "5"
                     }) {
                         Text("5")
-                    }
-                    Spacer()
+                            .padding(.horizontal, 50)
+                            .padding(.vertical, 25)
+                    }.foregroundColor(.white)
+                        .background(.green)
+                        .cornerRadius(10)
                     // 6 Number Button
                     Button(action: {
                         amount = amount + "6"
                     }) {
                         Text("6")
-                    }
+                            .padding(.horizontal, 50)
+                            .padding(.vertical, 25)
+                    }.foregroundColor(.white)
+                        .background(.green)
+                        .cornerRadius(10)
                     Spacer()
                 }
                 HStack(){
@@ -72,21 +93,31 @@ struct SendMoneyNumberPad: View {
                         amount = amount + "7"
                     }) {
                         Text("7")
-                    }
-                    Spacer()
+                            .padding(.horizontal, 50)
+                            .padding(.vertical, 25)
+                    }.foregroundColor(.white)
+                        .background(.green)
+                        .cornerRadius(10)
                     // 8 Number Button
                     Button(action: {
                         amount = amount + "8"
                     }) {
                         Text("8")
-                    }
-                    Spacer()
+                            .padding(.horizontal, 50)
+                            .padding(.vertical, 25)
+                    }.foregroundColor(.white)
+                        .background(.green)
+                        .cornerRadius(10)
                     // 9 Number Button
                     Button(action: {
                         amount = amount + "9"
                     }) {
                         Text("9")
-                    }
+                            .padding(.horizontal, 50)
+                            .padding(.vertical, 25)
+                    }.foregroundColor(.white)
+                        .background(.green)
+                        .cornerRadius(10)
                     Spacer()
                 }
                 HStack(){
@@ -96,17 +127,34 @@ struct SendMoneyNumberPad: View {
                         amount = amount + "."
                     }) {
                         Text(".")
-                    }
-                    Spacer()
+                            .padding(.horizontal, 50)
+                            .padding(.vertical, 25)
+                    }.foregroundColor(.white)
+                        .background(.green)
+                        .cornerRadius(10)
                     // 0 Number Button
                     Button(action: {
                         amount = amount + "0"
                     }) {
                         Text("0")
-                    }
+                            .padding(.horizontal, 50)
+                            .padding(.vertical, 25)
+                    }.foregroundColor(.white)
+                        .background(.green)
+                        .cornerRadius(10)
+                    Spacer()
+                    // Back Number Button
+                    Button(action: {
+                        amount = String(amount.dropLast())
+                    }) {
+                        Text("<-")
+                            .padding(.horizontal, 50)
+                            .padding(.vertical, 25)
+                    }.foregroundColor(.white)
+                        .background(.green)
+                        .cornerRadius(10)
                     Spacer()
                 }
-                Spacer()
             }
         }
     }

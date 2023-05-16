@@ -10,9 +10,7 @@ struct SplitView: View {
         ZStack {
             ColorUtils.backgroundColor.edgesIgnoringSafeArea(.all)
             VStack(spacing: 20) {
-                Text("Split")
-                    .font(.largeTitle)
-                    .foregroundColor(.white)
+                Spacer()
                 HStack {
                     Text("Amount:")
                         .font(.title)
@@ -20,18 +18,25 @@ struct SplitView: View {
                         .numberFieldStyle()
                         .focused($amountIsFocused)
                 }
+                .alternatelabelStyle()
                 Text("With Who?")
                     .font(.title)
-                FriendsScrollView(amount: $amount, selectedFriends: $selectedFriends, friends: friends, toSplit: true)
-                NavigationLink {
-                    MainMenuView(showSignInView: .constant(false))
-                } label: {
-                    Text("Confirm")
-                        .confirmLabelStyle()
-                        .padding(.bottom)
+                Section {
+                    FriendsScrollView(amount: $amount, selectedFriends: $selectedFriends, friends: friends, toSplit: true)
                 }
+                Section {
+                    NavigationLink {
+                        ConfirmationView(amount: $amount)
+                    } label: {
+                        Text("Confirm")
+                            .confirmLabelStyle()
+                            .padding(.bottom)
+                    }
+                }
+                
             }
         }
+        .navigationBarTitle("Split", displayMode: .large)
         .toolbar {
             ToolbarItemGroup(placement: .keyboard) {
                 Button("Done") {

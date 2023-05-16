@@ -30,6 +30,10 @@
 		9BA63AFB2A0A184300CE3AA8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BA63AFA2A0A184300CE3AA8 /* Preview Assets.xcassets */; };
 		9BA63B032A0A35A600CE3AA8 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 9BA63B022A0A35A600CE3AA8 /* GoogleSignIn */; };
 		9BA63B052A0A35A600CE3AA8 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 9BA63B042A0A35A600CE3AA8 /* GoogleSignInSwift */; };
+		9BAF45182A0FACB4005C864B /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 9BAF45172A0FACB4005C864B /* FirebaseFirestore */; };
+		9BAF451A2A0FACB4005C864B /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 9BAF45192A0FACB4005C864B /* FirebaseFirestoreSwift */; };
+		9BAF451F2A0FAE52005C864B /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAF451E2A0FAE52005C864B /* ProfileView.swift */; };
+		9BAF45212A0FAF9F005C864B /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAF45202A0FAF9F005C864B /* ProfileModel.swift */; };
 		9BC24CD52A0F2C1800DC61F3 /* SplitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC24CD42A0F2C1800DC61F3 /* SplitView.swift */; };
 		9BC24CD72A0F37E300DC61F3 /* Friends.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC24CD62A0F37E300DC61F3 /* Friends.swift */; };
 		9BC24CDA2A0F38B300DC61F3 /* Fakery in Frameworks */ = {isa = PBXBuildFile; productRef = 9BC24CD92A0F38B300DC61F3 /* Fakery */; };
@@ -55,10 +59,12 @@
 		9B5271A32A0DDE2F00043141 /* MainMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuView.swift; sourceTree = "<group>"; };
 		9B5271A82A0E015D00043141 /* EmailAuthenticationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailAuthenticationHandler.swift; sourceTree = "<group>"; };
 		9B5271AA2A0E05B900043141 /* EmailSignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSignUpView.swift; sourceTree = "<group>"; };
-		9BA63AF02A0A184200CE3AA8 /* Assignment3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Assignment3.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9BA63AF02A0A184200CE3AA8 /* Split Mate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Split Mate.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BA63AF32A0A184200CE3AA8 /* Assignment3App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assignment3App.swift; sourceTree = "<group>"; };
 		9BA63AF72A0A184300CE3AA8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9BA63AFA2A0A184300CE3AA8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		9BAF451E2A0FAE52005C864B /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		9BAF45202A0FAF9F005C864B /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
 		9BC24CD42A0F2C1800DC61F3 /* SplitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitView.swift; sourceTree = "<group>"; };
 		9BC24CD62A0F37E300DC61F3 /* Friends.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friends.swift; sourceTree = "<group>"; };
 		9BC24CDB2A0F499700DC61F3 /* FriendScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendScrollView.swift; sourceTree = "<group>"; };
@@ -77,6 +83,8 @@
 				9BA63B032A0A35A600CE3AA8 /* GoogleSignIn in Frameworks */,
 				9BA63B052A0A35A600CE3AA8 /* GoogleSignInSwift in Frameworks */,
 				9B52718C2A0D09C500043141 /* FirebaseAnalytics in Frameworks */,
+				9BAF45182A0FACB4005C864B /* FirebaseFirestore in Frameworks */,
+				9BAF451A2A0FACB4005C864B /* FirebaseFirestoreSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,16 +111,16 @@
 		9B5271A22A0DDE1800043141 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9BAF451C2A0FAD4D005C864B /* Helper */,
+				9BAF451B2A0FAD37005C864B /* Core */,
 				9B5271AC2A0E080B00043141 /* Authentication */,
-				9B5271A02A0DDB5500043141 /* InitialView.swift */,
-				9B5271A32A0DDE2F00043141 /* MainMenuView.swift */,
 				C612616E2A0F2C1D00E083EA /* SendMoneyView.swift */,
 				C61261702A0F457E00E083EA /* SendMoneyNumberPad.swift */,
 				3AED06222A0F2C3200FAF7DA /* RequestView.swift */,
 				3AED06242A0F3A9700FAF7DA /* ConfirmationView.swift */,
 				9BC24CD42A0F2C1800DC61F3 /* SplitView.swift */,
-				9BC24CDB2A0F499700DC61F3 /* FriendScrollView.swift */,
 				3AED06262A0F52A500FAF7DA /* ConfirmedView.swift */,
+				9BAF451E2A0FAE52005C864B /* ProfileView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -120,10 +128,9 @@
 		9B5271A52A0DDF5C00043141 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				9B52719E2A0DCFE900043141 /* AuthenticationManager.swift */,
-				9B5271A82A0E015D00043141 /* EmailAuthenticationHandler.swift */,
-				9B4C80BD2A0E174000CE81BA /* GoogleSignInHelper.swift */,
+				9BAF451D2A0FAD68005C864B /* Authentication */,
 				9BC24CD62A0F37E300DC61F3 /* Friends.swift */,
+				9BAF45202A0FAF9F005C864B /* ProfileModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -150,7 +157,7 @@
 		9BA63AF12A0A184200CE3AA8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9BA63AF02A0A184200CE3AA8 /* Assignment3.app */,
+				9BA63AF02A0A184200CE3AA8 /* Split Mate.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -178,12 +185,39 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		9BAF451B2A0FAD37005C864B /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				9B5271A02A0DDB5500043141 /* InitialView.swift */,
+				9B5271A32A0DDE2F00043141 /* MainMenuView.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		9BAF451C2A0FAD4D005C864B /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				9BC24CDB2A0F499700DC61F3 /* FriendScrollView.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		9BAF451D2A0FAD68005C864B /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				9B52719E2A0DCFE900043141 /* AuthenticationManager.swift */,
+				9B5271A82A0E015D00043141 /* EmailAuthenticationHandler.swift */,
+				9B4C80BD2A0E174000CE81BA /* GoogleSignInHelper.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		9BA63AEF2A0A184200CE3AA8 /* Assignment3 */ = {
+		9BA63AEF2A0A184200CE3AA8 /* Split Mate */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9BA63AFE2A0A184300CE3AA8 /* Build configuration list for PBXNativeTarget "Assignment3" */;
+			buildConfigurationList = 9BA63AFE2A0A184300CE3AA8 /* Build configuration list for PBXNativeTarget "Split Mate" */;
 			buildPhases = (
 				9BA63AEC2A0A184200CE3AA8 /* Sources */,
 				9BA63AED2A0A184200CE3AA8 /* Frameworks */,
@@ -193,7 +227,7 @@
 			);
 			dependencies = (
 			);
-			name = Assignment3;
+			name = "Split Mate";
 			packageProductDependencies = (
 				9BA63B022A0A35A600CE3AA8 /* GoogleSignIn */,
 				9BA63B042A0A35A600CE3AA8 /* GoogleSignInSwift */,
@@ -201,9 +235,11 @@
 				9B52718D2A0D09C500043141 /* FirebaseAnalyticsSwift */,
 				9B5271902A0DC8D700043141 /* FirebaseAuth */,
 				9BC24CD92A0F38B300DC61F3 /* Fakery */,
+				9BAF45172A0FACB4005C864B /* FirebaseFirestore */,
+				9BAF45192A0FACB4005C864B /* FirebaseFirestoreSwift */,
 			);
 			productName = Assignment3;
-			productReference = 9BA63AF02A0A184200CE3AA8 /* Assignment3.app */;
+			productReference = 9BA63AF02A0A184200CE3AA8 /* Split Mate.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -240,7 +276,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9BA63AEF2A0A184200CE3AA8 /* Assignment3 */,
+				9BA63AEF2A0A184200CE3AA8 /* Split Mate */,
 			);
 		};
 /* End PBXProject section */
@@ -266,6 +302,7 @@
 				3AED06272A0F52A500FAF7DA /* ConfirmedView.swift in Sources */,
 				3AED06232A0F2C3200FAF7DA /* RequestView.swift in Sources */,
 				9B5271A92A0E015D00043141 /* EmailAuthenticationHandler.swift in Sources */,
+				9BAF45212A0FAF9F005C864B /* ProfileModel.swift in Sources */,
 				C612616F2A0F2C1D00E083EA /* SendMoneyView.swift in Sources */,
 				9BC24CD72A0F37E300DC61F3 /* Friends.swift in Sources */,
 				9B5271A12A0DDB5500043141 /* InitialView.swift in Sources */,
@@ -282,6 +319,7 @@
 				9BC24CDC2A0F499700DC61F3 /* FriendScrollView.swift in Sources */,
 				9B52719F2A0DCFE900043141 /* AuthenticationManager.swift in Sources */,
 				9B5271982A0DCBA100043141 /* EmailSignInView.swift in Sources */,
+				9BAF451F2A0FAE52005C864B /* ProfileView.swift in Sources */,
 				9B5271AB2A0E05B900043141 /* EmailSignUpView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -416,9 +454,11 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Assignment3/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Split Mate";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -447,9 +487,11 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Assignment3/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Split Mate";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -477,7 +519,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9BA63AFE2A0A184300CE3AA8 /* Build configuration list for PBXNativeTarget "Assignment3" */ = {
+		9BA63AFE2A0A184300CE3AA8 /* Build configuration list for PBXNativeTarget "Split Mate" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9BA63AFF2A0A184300CE3AA8 /* Debug */,
@@ -548,6 +590,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 9BA63B012A0A35A500CE3AA8 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
 			productName = GoogleSignInSwift;
+		};
+		9BAF45172A0FACB4005C864B /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9B52718A2A0D09C500043141 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		9BAF45192A0FACB4005C864B /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9B52718A2A0D09C500043141 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
 		};
 		9BC24CD92A0F38B300DC61F3 /* Fakery */ = {
 			isa = XCSwiftPackageProductDependency;

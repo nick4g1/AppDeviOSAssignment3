@@ -22,6 +22,20 @@ struct HeadingLabelStyle: ViewModifier {
     }
 }
 
+struct AlternateLabelStyle: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .font(.headline)
+            .foregroundColor(ColorUtils.buttonBackgroundColour)
+            .frame(height: 55)
+            .frame(maxWidth: .infinity)
+            .background(Color(red: 0.7, green: 0.7, blue: 0.7))
+            .cornerRadius(10)
+            .shadow(radius: 10)
+            .padding(.horizontal)
+    }
+}
+
 struct ConfirmLabelStyle: ViewModifier {
     func body(content: Content) -> some View {
         content
@@ -80,12 +94,10 @@ struct NumberFieldStyle: ViewModifier {
     func body(content: Content) -> some View {
         content
             .multilineTextAlignment(.center)
-            .font(.headline)
+            .font(.title)
             .frame(height: 55)
+            .foregroundColor(Color(red: 0.3, green: 0.5, blue: 0.3))
             .frame(maxWidth: 150)
-            .background(.white)
-            .cornerRadius(10)
-            .shadow(radius: 10)
             .padding(.horizontal)
             .keyboardType(.decimalPad)
     }
@@ -94,6 +106,10 @@ struct NumberFieldStyle: ViewModifier {
 extension View {
     func headingLabelStyle() -> some View {
         self.modifier(HeadingLabelStyle())
+    }
+    
+    func alternatelabelStyle() -> some View {
+        self.modifier(AlternateLabelStyle())
     }
     
     func subHeadingLabelStyle() -> some View {

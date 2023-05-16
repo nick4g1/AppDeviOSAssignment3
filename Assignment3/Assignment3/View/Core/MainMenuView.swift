@@ -64,7 +64,7 @@ struct MainMenuView: View {
                         .shadow(radius: 20)
                 }
                 NavigationLink {
-                    // Link to profile view
+                    ProfileView()
                 } label: {
                     Text("Profile")
                         .font(.headline)

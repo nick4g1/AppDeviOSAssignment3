@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "9BA63AEF2A0A184200CE3AA8"
-               BuildableName = "Assignment3.app"
-               BlueprintName = "Assignment3"
+               BuildableName = "Split Mate.app"
+               BlueprintName = "Split Mate"
                ReferencedContainer = "container:Assignment3.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -44,8 +44,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9BA63AEF2A0A184200CE3AA8"
-            BuildableName = "Assignment3.app"
-            BlueprintName = "Assignment3"
+            BuildableName = "Split Mate.app"
+            BlueprintName = "Split Mate"
             ReferencedContainer = "container:Assignment3.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -61,8 +61,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9BA63AEF2A0A184200CE3AA8"
-            BuildableName = "Assignment3.app"
-            BlueprintName = "Assignment3"
+            BuildableName = "Split Mate.app"
+            BlueprintName = "Split Mate"
             ReferencedContainer = "container:Assignment3.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

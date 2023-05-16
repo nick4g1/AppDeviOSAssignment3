@@ -27,6 +27,7 @@ struct AuthenticationView: View {
             ZStack {
                 ColorUtils.backgroundColor.edgesIgnoringSafeArea(.all)
                 VStack(spacing:20) {
+                    Spacer()
                     Image("Logo")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
@@ -34,7 +35,7 @@ struct AuthenticationView: View {
                         .shadow(radius: 20)
                     Text("Split Mate")
                         .font(.custom("System", size: 50))
-                        .foregroundColor(.white)
+                        .foregroundColor(.black)
                     Spacer()
                     Button{
                         Task {

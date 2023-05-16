@@ -40,7 +40,7 @@ struct FriendsScrollView: View {
                         }
                         .font(.headline)
                         .foregroundColor(ColorUtils.textColour)
-                        .frame(height: 55)
+                        .frame(height: 35)
                         .frame(maxWidth: .infinity)
                         .background(selectedFriends.contains(friend.email) ? Color.green : ColorUtils.buttonBackgroundColour)
                         .shadow(radius: 10)

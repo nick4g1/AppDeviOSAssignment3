@@ -45,7 +45,7 @@ struct EmailSignInView: View {
                 Spacer()
             }
         }
-        .navigationTitle("Sign In With Email")
+        .navigationBarTitle("Sign In With Email", displayMode: .large)
     }
 }
 

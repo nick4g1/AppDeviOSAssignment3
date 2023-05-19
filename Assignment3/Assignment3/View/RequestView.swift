@@ -10,6 +10,7 @@ import SwiftUI
 struct RequestView: View {
     //@Binding private var passTotalAmount = 0.0
     //@State private var selectedPage: Page = RequestView()
+    @FocusState private var amountIsFocused: Bool
     @State private var amount = 0.0
     @State private var selectedFriends: Set<String> = []
     let friends = Friends().generateFriends()
@@ -18,17 +19,17 @@ struct RequestView: View {
         ZStack {
             ColorUtils.backgroundColor.edgesIgnoringSafeArea(.all)
             VStack(spacing: 20) {
-                Text("REQUEST")
+                Spacer()
+                HStack {
+                    Text("Amount:")
+                        .font(.title)
+                    TextField("Amount", value: $amount, format: .currency(code: "AUD"))
+                        .numberFieldStyle()
+                        .focused($amountIsFocused)
+                }
+                .alternatelabelStyle()
+                Text("From Who?")
                     .font(.title)
-                    .fontWeight(.bold)
-                    .foregroundColor(.white)
-                    .multilineTextAlignment(.leading)
-                
-                Text("ENTER AN AMOUNT")
-//                    .frame(maxWidth: .leading)
-
-                TextField("Amount", value: $amount, format: .currency(code: "AUD"))
-                    .numberFieldStyle()
                 // Here comes the scrollstack
                 FriendsScrollView(amount: $amount, selectedFriends: $selectedFriends, friends: friends, toSplit: false)
                 //
@@ -37,14 +38,21 @@ struct RequestView: View {
                     destination: ConfirmationView(amount: $amount),
                     label: {
                         Text("Request")
-                            .headingLabelStyle()
+                            .confirmLabelStyle()
                     }
                 )
 
             }
 
         }
-            .navigationTitle("REQUEST")
+        .navigationBarTitle("Request", displayMode: .large)
+            .toolbar {
+                ToolbarItemGroup(placement: .keyboard) {
+                    Button("Done") {
+                        amountIsFocused = false
+                    }
+                }
+            }
         
         
     }
@@ -52,6 +60,8 @@ struct RequestView: View {
 
 struct RequestView_Previews: PreviewProvider {
     static var previews: some View {
-        RequestView()
+        NavigationStack {
+            RequestView()
+        }
     }
 }

@@ -17,7 +17,7 @@ struct SendMoneyView: View {
             VStack(){
                 //Title as navigation title
                 Spacer()
-                TextField("Amount...", value: $amount, format: .currency(code: "USD"))
+                TextField("Amount...", value: $amount, format: .currency(code: "AUD"))
                     .textFieldStyle().keyboardType(.numberPad)
                 Text("Friend List").frame(maxWidth: .infinity, alignment: .leading).font(.system(size: 30)).padding(.all)
                 ScrollView {

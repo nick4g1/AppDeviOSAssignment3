@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		09A619162A18C3E6002ACE3B /* TrackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A619152A18C3E6002ACE3B /* TrackView.swift */; };
 		3AED06232A0F2C3200FAF7DA /* RequestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AED06222A0F2C3200FAF7DA /* RequestView.swift */; };
 		3AED06252A0F3A9700FAF7DA /* ConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AED06242A0F3A9700FAF7DA /* ConfirmationView.swift */; };
 		3AED06272A0F52A500FAF7DA /* ConfirmedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AED06262A0F52A500FAF7DA /* ConfirmedView.swift */; };
@@ -43,6 +44,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		09A619152A18C3E6002ACE3B /* TrackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackView.swift; sourceTree = "<group>"; };
 		3AED06222A0F2C3200FAF7DA /* RequestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestView.swift; sourceTree = "<group>"; };
 		3AED06242A0F3A9700FAF7DA /* ConfirmationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationView.swift; sourceTree = "<group>"; };
 		3AED06262A0F52A500FAF7DA /* ConfirmedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmedView.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 				9B5271AC2A0E080B00043141 /* Authentication */,
 				C612616E2A0F2C1D00E083EA /* SendMoneyView.swift */,
 				C61261702A0F457E00E083EA /* SendMoneyNumberPad.swift */,
+				09A619152A18C3E6002ACE3B /* TrackView.swift */,
 				3AED06222A0F2C3200FAF7DA /* RequestView.swift */,
 				3AED06242A0F3A9700FAF7DA /* ConfirmationView.swift */,
 				9BC24CD42A0F2C1800DC61F3 /* SplitView.swift */,
@@ -308,6 +311,7 @@
 				9B5271A12A0DDB5500043141 /* InitialView.swift in Sources */,
 				9B4C80C02A0E18FC00CE81BA /* ViewUtils.swift in Sources */,
 				9B52719D2A0DCE5C00043141 /* ViewModifierUtils.swift in Sources */,
+				09A619162A18C3E6002ACE3B /* TrackView.swift in Sources */,
 				9B4C80BE2A0E174000CE81BA /* GoogleSignInHelper.swift in Sources */,
 				9B5271A42A0DDE2F00043141 /* MainMenuView.swift in Sources */,
 				9BC24CD52A0F2C1800DC61F3 /* SplitView.swift in Sources */,

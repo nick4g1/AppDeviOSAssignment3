@@ -122,16 +122,6 @@ struct SendMoneyNumberPad: View {
                 }
                 HStack(){
                     Spacer()
-                    // . Number Button
-                    Button(action: {
-                        amount = amount + "."
-                    }) {
-                        Text(".")
-                            .padding(.horizontal, 50)
-                            .padding(.vertical, 25)
-                    }.foregroundColor(.white)
-                        .background(.green)
-                        .cornerRadius(10)
                     // 0 Number Button
                     Button(action: {
                         amount = amount + "0"

@@ -8,34 +8,44 @@
 import SwiftUI
 
 struct SendMoneyView: View {
-    @State private var amount = 0.0
-    //Pass friend type to send
-    //@State private var friend: Friend
+    @State private var value = 0.0
+    private var numberFormatter: NumberFormatter
+    //Friends
+    @State private var selectedFriends: Set<String> = []
+    let friends = Friends().generateFriends()
+    //Initialize number formatter for CurrencyTextField
+    init(numberFormatter: NumberFormatter = NumberFormatter()) {
+            self.numberFormatter = numberFormatter
+        self.numberFormatter.numberStyle = .currency
+            self.numberFormatter.maximumFractionDigits = 2
+    }
     var body: some View {
         ZStack {
             ColorUtils.backgroundColor.edgesIgnoringSafeArea(.all)
             VStack(){
                 //Title as navigation title
+                //Creates text field using CurrencyTextField and NumberFormatter initialized above
+                CurrencyTextField(numberFormatter: numberFormatter, value: $value)
+                                .padding(20)
+                                .overlay(RoundedRectangle(cornerRadius: 16)
+                                            .stroke(Color.gray.opacity(0.3), lineWidth: 2))
+                                .frame(height: 100)
                 Spacer()
-                TextField("Amount...", value: $amount, format: .currency(code: "USD"))
-                    .textFieldStyle().keyboardType(.numberPad)
+                //Friends list label for FriendsScrollView
                 Text("Friend List").frame(maxWidth: .infinity, alignment: .leading).font(.system(size: 30)).padding(.all)
-                ScrollView {
-                    VStack(spacing: 20) {
-                        ForEach(0..<10) {
-                            Text("Item \($0)")
-                                .headingLabelStyle()
-                        }
+                // Here comes the scrollstack
+                FriendsScrollView(amount: $value, selectedFriends: $selectedFriends, friends: friends, toSplit: false)
+                Spacer()
+                //Link to confirmation view
+                NavigationLink(
+                    destination: ConfirmationView(amount: $value),
+                    label: {
+                        Text("Send")
+                            .sendReceiveStyle()
                     }
-                }
-                .frame(height: 250)
-                
-                Spacer()
-            label: do {
-                Text("Send")
-                    .sendReceiveStyle()
-                Spacer()
-            }
+                )
+                //Check to make sure value is properly created
+                Text(String(format: "Sending: $%.02f", value))
             }
             .navigationTitle("Send Money")
         }

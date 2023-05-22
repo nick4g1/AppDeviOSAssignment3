@@ -13,5 +13,17 @@ struct Profile {
     var email: String
     var phoneNumber: String
     var friends: [Friend] = []
-    var totalMoneySent: Double = 0
+	
+	var transactions: [Transaction]
+}
+
+struct Transaction {
+	let friend: Friend
+	let amount: Double
+	let type: TransactionType
+}
+
+enum TransactionType: Int {
+	case send = -1
+	case recieve = 1
 }

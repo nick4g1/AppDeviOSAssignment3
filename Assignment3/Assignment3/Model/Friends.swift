@@ -11,6 +11,7 @@ import Fakery
 struct Friend {
     let name: String
     let email: String
+    var totalMoneySent: Double = 0
 }
 
 

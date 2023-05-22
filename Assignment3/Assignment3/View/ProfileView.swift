@@ -25,11 +25,6 @@ struct ProfileView: View {
                         Text("Name: \(viewModel.user?.uid ?? "")") // Currently ID from AUTH
                         Text("Phone: 111") // Will be from Firestore when set up
                         Text("Email: \(viewModel.user?.email ?? "")") // Currently email from AUTH
-                        
-                        Section(header: Text("Money")) {
-                                Text("Total Money Spent: $74.50") // Replace values when known
-                                Text("Total Money Received: $25.8")
-                        }
                     }
                     .onAppear {
                         try? viewModel.loadCurrentUser()

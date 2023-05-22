@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		09A619162A18C3E6002ACE3B /* TrackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A619152A18C3E6002ACE3B /* TrackView.swift */; };
+		0C78E7432A1B6924004D963F /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C78E7422A1B6924004D963F /* Profile.swift */; };
 		3AED06232A0F2C3200FAF7DA /* RequestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AED06222A0F2C3200FAF7DA /* RequestView.swift */; };
 		3AED06252A0F3A9700FAF7DA /* ConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AED06242A0F3A9700FAF7DA /* ConfirmationView.swift */; };
 		3AED06272A0F52A500FAF7DA /* ConfirmedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AED06262A0F52A500FAF7DA /* ConfirmedView.swift */; };
@@ -45,6 +46,7 @@
 
 /* Begin PBXFileReference section */
 		09A619152A18C3E6002ACE3B /* TrackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackView.swift; sourceTree = "<group>"; };
+		0C78E7422A1B6924004D963F /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		3AED06222A0F2C3200FAF7DA /* RequestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestView.swift; sourceTree = "<group>"; };
 		3AED06242A0F3A9700FAF7DA /* ConfirmationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationView.swift; sourceTree = "<group>"; };
 		3AED06262A0F52A500FAF7DA /* ConfirmedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmedView.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 			children = (
 				9BAF451D2A0FAD68005C864B /* Authentication */,
 				9BC24CD62A0F37E300DC61F3 /* Friends.swift */,
+				0C78E7422A1B6924004D963F /* Profile.swift */,
 				9BAF45202A0FAF9F005C864B /* ProfileModel.swift */,
 			);
 			path = Model;
@@ -303,6 +306,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3AED06272A0F52A500FAF7DA /* ConfirmedView.swift in Sources */,
+				0C78E7432A1B6924004D963F /* Profile.swift in Sources */,
 				3AED06232A0F2C3200FAF7DA /* RequestView.swift in Sources */,
 				9B5271A92A0E015D00043141 /* EmailAuthenticationHandler.swift in Sources */,
 				9BAF45212A0FAF9F005C864B /* ProfileModel.swift in Sources */,

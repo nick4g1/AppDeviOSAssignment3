@@ -21,6 +21,7 @@ struct Transaction {
 	let friend: Friend
 	let amount: Double
 	let type: TransactionType
+	let date: Date
 }
 
 enum TransactionType: Int {

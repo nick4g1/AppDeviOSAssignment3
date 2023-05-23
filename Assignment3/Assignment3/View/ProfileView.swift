@@ -19,6 +19,7 @@ struct ProfileView: View {
                 Button {
                     Task {
                         try? await UserManager.shared.requestMoney(amount: 100, email: "cooper")
+                        try? await UserManager.shared.addFriend(friendEmail: "cooper@gmail.com")
                         try? await viewModel.loadUser()
                     }
                     

@@ -17,6 +17,7 @@ struct UserProfile: Codable {
     var balance: Double
     var recieved: Double
     var sent: Double
+    var friends: [String]
 
     
     init(auth: AuthDataResultModel) {
@@ -27,25 +28,7 @@ struct UserProfile: Codable {
         self.balance = 0.0
         self.sent = 0.0
         self.recieved = 0.0
-        
-    }
-    
-    init(
-        userId:String,
-        email:String? = nil,
-        photoUrl: String? = nil,
-        dateCreated:Date?,
-        balance: Double,
-        recieved: Double,
-        sent: Double
-    ) {
-        self.userId = userId
-        self.email = email
-        self.photoUrl = photoUrl
-        self.dateCreated = Date()
-        self.balance = 0.0
-        self.sent = 0.0
-        self.recieved = 0.0
+        self.friends = []
         
     }
     
@@ -62,7 +45,7 @@ final class UserManager {
         userCollection.document(userId)
     }
     
-    private func friendUserDocument(email: String) -> DocumentReference {
+    private func userDocument(email: String) -> DocumentReference {
         userCollection.document(email)
     }
     
@@ -76,8 +59,8 @@ final class UserManager {
         
     }
     
-    func getFriend(email: String) async throws -> UserProfile {
-        try await friendUserDocument(email: email).getDocument(as: UserProfile.self)
+    func getFriendProfile(email: String) async throws -> UserProfile {
+        try await userDocument(email: email).getDocument(as: UserProfile.self)
     }
     
     // Could be changed to only update required fields
@@ -96,6 +79,14 @@ final class UserManager {
         var user = try await UserManager.shared.loadCurrentUser()
         user.balance = user.balance + amount
         user.sent = user.recieved + amount
+        try await UserManager.shared.updateProfile(user: user)
+    }
+    
+    func addFriend(friendEmail: String) async throws {
+        var user = try await UserManager.shared.loadCurrentUser()
+        var friendArray = user.friends
+        friendArray.append(friendEmail)
+        user.friends = friendArray
         try await UserManager.shared.updateProfile(user: user)
     }
     

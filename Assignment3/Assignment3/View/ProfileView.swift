@@ -14,12 +14,22 @@ struct ProfileView: View {
     var body: some View {
         List {
             if let user = viewModel.user {
-                Text("UserID: \(user.uid)")
+                Text("UserID: \(user.userId)")
+                Text("Balance: \(user.balance)")
+                Button {
+                    Task {
+                        try? await UserManager.shared.requestMoney(amount: 100, email: "cooper")
+                        try? await viewModel.loadUser()
+                    }
+                    
+                } label: {
+                    Text("Increase Balance")
+                }
             }
 
         }
-            .onAppear {
-                try? viewModel.loadCurrentUser()
+            .task {
+                try? await viewModel.loadUser()
     }
 
         }

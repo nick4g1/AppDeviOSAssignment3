@@ -9,10 +9,10 @@ import Foundation
 
 final class ProfileModel: ObservableObject {
     
-    @Published private(set) var user: AuthDataResultModel? = nil
+    @Published private(set) var user: UserProfile? = nil
     
-    func loadCurrentUser() throws {
-        self.user = try AuthenticationManager.shared.getAuthenticatedUser()
+    func loadUser() async throws {
+        self.user = try await UserManager.shared.loadCurrentUser()
     }
 
 }

@@ -9,16 +9,6 @@ import SwiftUI
 import GoogleSignIn
 import GoogleSignInSwift
 
-@MainActor
-final class AuthenticationViewModel: ObservableObject {
-    
-    func signInGoogle() async throws {
-        let helper = GoogleSignInHelper()
-        let tokens = try await helper.signInGoogle()
-        try await AuthenticationManager.shared.signInWithGoogle(tokens: tokens)
-    }
-}
-
 struct AuthenticationView: View {
     
     @Binding var showSignInView: Bool
@@ -26,7 +16,7 @@ struct AuthenticationView: View {
     var body: some View {
             ZStack {
                 ColorUtils.backgroundColor.edgesIgnoringSafeArea(.all)
-                VStack(spacing:20) {
+                VStack(spacing:35) {
                     Spacer()
                     Image("Logo")
                         .resizable()
@@ -36,7 +26,6 @@ struct AuthenticationView: View {
                     Text("Split Mate")
                         .font(.custom("System", size: 50))
                         .foregroundColor(.black)
-                    Spacer()
                     Button{
                         Task {
                             do {
@@ -57,6 +46,7 @@ struct AuthenticationView: View {
                                 .foregroundColor(ColorUtils.textColour)
                         }
                         .headingLabelStyle()
+  
                     }
                     NavigationLink {
                         EmailSignInView(showSignInView: $showSignInView)
@@ -64,6 +54,7 @@ struct AuthenticationView: View {
                         Text("Sign In With Email")
                             .headingLabelStyle()
                     }
+                    Spacer()
                 }
             }
     }

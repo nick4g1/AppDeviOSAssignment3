@@ -20,7 +20,7 @@ struct ConfirmedView: View {
                     .shadow(radius: 10)
                     .frame(maxHeight: UIScreen.main.bounds.height / 2)
 
-                Text("Your transaction of \(amount, specifier: "%.2f") has been excuted")
+				Text("Your transaction of \(amount, format: .currency(code: "AUD")) has been excuted")
                     .font(.title2)
                     .fontWeight(.bold)
                     .foregroundColor(.white)

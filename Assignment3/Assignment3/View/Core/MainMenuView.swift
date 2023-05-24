@@ -52,7 +52,7 @@ struct MainMenuView: View {
                         .shadow(radius: 20)
                 }
                 NavigationLink {
-                    // Link to track view
+                    TrackView()
                 } label: {
                     Text("Track")
                         .font(.headline)

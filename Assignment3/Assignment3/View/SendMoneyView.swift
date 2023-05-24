@@ -31,7 +31,6 @@ struct SendMoneyView: View {
                                             .stroke(Color.gray.opacity(0.3), lineWidth: 2))
                                 .frame(height: 100)
                 Spacer()
-                //Friends list label for FriendsScrollView
                 Text("Friend List").frame(maxWidth: .infinity, alignment: .leading).font(.system(size: 30)).padding(.all)
                 // Here comes the scrollstack
                 FriendsScrollView(amount: $value, selectedFriends: $selectedFriends, friends: friends, toSplit: false)

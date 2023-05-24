@@ -2,7 +2,7 @@
 //  ProfileView.swift
 //  Split Mate
 //
-//  Created by Cooper Jacob on 13/5/2023.
+//  Created by Jake Isaacs on 22/5/2023.
 //
 
 import SwiftUI
@@ -32,8 +32,6 @@ struct ProfileView: View {
             .task {
                 try? await viewModel.loadUser()
     }
-
-        }
 }
 
 struct ProfileView_Previews: PreviewProvider {

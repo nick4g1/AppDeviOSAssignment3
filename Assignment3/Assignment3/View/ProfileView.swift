@@ -29,8 +29,9 @@ struct ProfileView: View {
             }
 
         }
-            .task {
-                try? await viewModel.loadUser()
+		.task {
+			try? await viewModel.loadUser()
+		}
     }
 }
 

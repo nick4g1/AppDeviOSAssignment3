@@ -30,20 +30,6 @@ struct UserProfile: Codable {
         self.recieved = 0.0
         self.friends = []
     }
-	
-	#if DEBUG
-	init() {
-		userId = "test"
-		email = "test@test.test"
-		photoUrl = nil
-		dateCreated = Date()
-		balance = 0
-		recieved = 0
-		sent = 0
-		friends = []
-	}
-	#endif
-    
 }
 
 final class UserManager {

@@ -42,6 +42,7 @@
 		9BC24CD72A0F37E300DC61F3 /* Friends.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC24CD62A0F37E300DC61F3 /* Friends.swift */; };
 		9BC24CDA2A0F38B300DC61F3 /* Fakery in Frameworks */ = {isa = PBXBuildFile; productRef = 9BC24CD92A0F38B300DC61F3 /* Fakery */; };
 		9BC24CDC2A0F499700DC61F3 /* FriendScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC24CDB2A0F499700DC61F3 /* FriendScrollView.swift */; };
+		9BD272DF2A1E154A005A0E42 /* TransactionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD272DE2A1E154A005A0E42 /* TransactionManager.swift */; };
 		C612616F2A0F2C1D00E083EA /* SendMoneyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C612616E2A0F2C1D00E083EA /* SendMoneyView.swift */; };
 		C61261712A0F457E00E083EA /* SendMoneyNumberPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61261702A0F457E00E083EA /* SendMoneyNumberPad.swift */; };
 		C692258F2A19FB0900644D70 /* CurrencyUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C692258E2A19FB0900644D70 /* CurrencyUITextField.swift */; };
@@ -78,6 +79,7 @@
 		9BC24CD42A0F2C1800DC61F3 /* SplitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitView.swift; sourceTree = "<group>"; };
 		9BC24CD62A0F37E300DC61F3 /* Friends.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friends.swift; sourceTree = "<group>"; };
 		9BC24CDB2A0F499700DC61F3 /* FriendScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendScrollView.swift; sourceTree = "<group>"; };
+		9BD272DE2A1E154A005A0E42 /* TransactionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionManager.swift; sourceTree = "<group>"; };
 		C612616E2A0F2C1D00E083EA /* SendMoneyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMoneyView.swift; sourceTree = "<group>"; };
 		C61261702A0F457E00E083EA /* SendMoneyNumberPad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMoneyNumberPad.swift; sourceTree = "<group>"; };
 		C692258E2A19FB0900644D70 /* CurrencyUITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyUITextField.swift; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				9B843C202A1753B70002CDBE /* UserManager.swift */,
+				9BD272DE2A1E154A005A0E42 /* TransactionManager.swift */,
 			);
 			path = Firestore;
 			sourceTree = "<group>";
@@ -338,6 +341,7 @@
 				9B4C80C02A0E18FC00CE81BA /* ViewUtils.swift in Sources */,
 				9B52719D2A0DCE5C00043141 /* ViewModifierUtils.swift in Sources */,
 				09A619162A18C3E6002ACE3B /* TrackView.swift in Sources */,
+				9BD272DF2A1E154A005A0E42 /* TransactionManager.swift in Sources */,
 				9B4C80BE2A0E174000CE81BA /* GoogleSignInHelper.swift in Sources */,
 				9B5271A42A0DDE2F00043141 /* MainMenuView.swift in Sources */,
 				9B843C232A1756D70002CDBE /* AuthenticationViewModel.swift in Sources */,

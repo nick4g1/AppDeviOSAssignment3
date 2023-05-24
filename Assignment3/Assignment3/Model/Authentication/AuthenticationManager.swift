@@ -11,12 +11,12 @@ import FirebaseAuth
 // Creating a struct to store only the needed data from the returned Firebase user object
 struct AuthDataResultModel {
     let uid: String
-    let email: String?
+    let email: String
     let photoUrl: String?
     
     init(user: User) {
         self.uid = user.uid
-        self.email = user.email
+        self.email = user.email ?? ""
         self.photoUrl = user.photoURL?.absoluteString
     }
 }

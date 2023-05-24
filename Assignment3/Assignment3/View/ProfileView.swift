@@ -10,6 +10,7 @@ import SwiftUI
 struct ProfileView: View {
     
     @StateObject private var viewModel = ProfileModel()
+    let transaction = UserTransaction(transactionId: "1111", amount: 200.00, sendingAccount: "cooper1@gmail.com", recievingAccount: "cooperj97@gmail.com", date: Date())
     
     var body: some View {
         List {
@@ -18,13 +19,16 @@ struct ProfileView: View {
                 Text("Balance: \(user.balance)")
                 Button {
                     Task {
-                        try? await UserManager.shared.requestMoney(amount: 100, email: "cooper")
-                        try? await UserManager.shared.addFriend(friendEmail: "cooper@gmail.com")
-                        try? await viewModel.loadUser()
+                        do {
+                            try await TransactionManager.shared.createNewTransaction(transaction: transaction)
+                            try? await viewModel.loadUser()
+                        } catch {
+                            print(error)
+                        }
                     }
                     
                 } label: {
-                    Text("Increase Balance")
+                    Text("Make Transaction")
                 }
             }
             

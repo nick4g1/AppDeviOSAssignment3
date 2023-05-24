@@ -12,26 +12,25 @@ struct ProfileView: View {
     @StateObject private var viewModel = ProfileModel()
     
     var body: some View {
-            ZStack {
-                ColorUtils.backgroundColor.edgesIgnoringSafeArea(.all)
-                VStack {
-                    List {
-                        // Image(viewModel.user?.photoUrl ?? "") // Image from AUTH
-                        Image(systemName: "person.circle.fill")
-                            .resizable()
-                            .frame(width: 100, height: 100)
-                            .aspectRatio(contentMode: .fill)
-                            .cornerRadius(50)
-                        Text("Name: \(viewModel.user?.uid ?? "")") // Currently ID from AUTH
-                        Text("Phone: 111") // Will be from Firestore when set up
-                        Text("Email: \(viewModel.user?.email ?? "")") // Currently email from AUTH
+        List {
+            if let user = viewModel.user {
+                Text("UserID: \(user.userId)")
+                Text("Balance: \(user.balance)")
+                Button {
+                    Task {
+                        try? await UserManager.shared.requestMoney(amount: 100, email: "cooper")
+                        try? await UserManager.shared.addFriend(friendEmail: "cooper@gmail.com")
+                        try? await viewModel.loadUser()
                     }
-                    .onAppear {
-                        try? viewModel.loadCurrentUser()
-                    }
+                    
+                } label: {
+                    Text("Increase Balance")
                 }
             }
-            .navigationTitle("Profile")
+
+        }
+            .task {
+                try? await viewModel.loadUser()
     }
 }
 

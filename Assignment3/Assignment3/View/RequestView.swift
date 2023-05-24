@@ -38,7 +38,7 @@ struct RequestView: View {
                     destination: ConfirmationView(amount: $amount),
                     label: {
                         Text("Request")
-                            .confirmLabelStyle()
+                            .sendReceiveStyle()
                     }
                 )
 

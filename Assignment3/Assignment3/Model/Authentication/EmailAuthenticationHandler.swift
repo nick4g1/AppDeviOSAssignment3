@@ -41,9 +41,9 @@ final class EmailAuthenticationHandler {
         }
         
         // Try to create user with given email and password
-        let returnUserData = try await AuthenticationManager.shared.createUser(email: email, password: password)
-        print("Success")
-        print(returnUserData)
+        let authDatResult = try await AuthenticationManager.shared.createUser(email: email, password: password)
+        let user = UserProfile(auth: authDatResult)
+        try await UserManager.shared.createNewUser(user: user)
     }
     
     // Function to sign in user given email and password
@@ -56,7 +56,5 @@ final class EmailAuthenticationHandler {
         
         // Try to sign in user with given email and password
         let returnUserData = try await AuthenticationManager.shared.signInUser(email: email, password: password)
-        print("Success")
-        print(returnUserData)
     }
 }

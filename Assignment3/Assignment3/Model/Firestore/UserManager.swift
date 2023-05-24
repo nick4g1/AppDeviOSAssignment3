@@ -32,7 +32,6 @@ struct UserProfile: Codable {
         self.friends = []
         self.transactions = []
     }
-    
 }
 
 final class UserManager {

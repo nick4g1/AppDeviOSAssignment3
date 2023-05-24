@@ -29,8 +29,18 @@ struct UserProfile: Codable {
         self.sent = 0.0
         self.recieved = 0.0
         self.friends = []
-        
     }
+	
+	init() {
+		userId = "test"
+		email = "test@test.test"
+		photoUrl = nil
+		dateCreated = Date()
+		balance = 0
+		recieved = 0
+		sent = 0
+		friends = []
+	}
     
 }
 

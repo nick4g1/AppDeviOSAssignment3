@@ -12,8 +12,6 @@ struct TrackView: View {
 	//TODO: Keep track of transfers
 	@StateObject private var viewModel = ProfileModel()
 	
-	let total = 100
-	
     var body: some View {
 		List {
 			if let user = viewModel.user {
@@ -31,10 +29,11 @@ struct TrackView: View {
 							.foregroundColor(.green)
 					}
 					HStack {
+						let total = user.recieved - user.sent
 						Text("Net Transfers")
 							.font(.headline)
 						Spacer()
-						Text("\(user.recieved - user.sent < 0 ? "(":"")\(total, format: .currency(code: "AUD"))\(total < 0 ? ")":"")")
+						Text("\(total < 0 ? "(":"")\(total, format: .currency(code: "AUD"))\(total < 0 ? ")":"")")
 							.foregroundColor(total < 0 ? .red:.green)
 					}
 				}

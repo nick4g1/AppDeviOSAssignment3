@@ -27,18 +27,18 @@ struct ProfileView: View {
                     Text("Increase Balance")
                 }
             }
-
+            
         }
-		.task {
-			try? await viewModel.loadUser()
-		}
+        .task {
+            try? await viewModel.loadUser()
+        }
     }
-}
-
-struct ProfileView_Previews: PreviewProvider {
-    static var previews: some View {
-        NavigationStack {
-            ProfileView()
+    
+    struct ProfileView_Previews: PreviewProvider {
+        static var previews: some View {
+            NavigationStack {
+                ProfileView()
+            }
         }
     }
 }

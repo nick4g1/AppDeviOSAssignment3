@@ -31,6 +31,7 @@ struct UserProfile: Codable {
         self.friends = []
     }
 	
+	#if DEBUG
 	init() {
 		userId = "test"
 		email = "test@test.test"
@@ -41,6 +42,7 @@ struct UserProfile: Codable {
 		sent = 0
 		friends = []
 	}
+	#endif
     
 }
 

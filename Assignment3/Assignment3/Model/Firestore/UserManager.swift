@@ -29,9 +29,7 @@ struct UserProfile: Codable {
         self.sent = 0.0
         self.recieved = 0.0
         self.friends = []
-        
     }
-    
 }
 
 final class UserManager {

@@ -26,7 +26,7 @@ struct SplitView: View {
                 }
                 Section {
                     NavigationLink {
-                        ConfirmationView(amount: $amount)
+                        ConfirmationView(amount: $amount, transactions: [])
                     } label: {
                         Text("Confirm")
                             .confirmLabelStyle()

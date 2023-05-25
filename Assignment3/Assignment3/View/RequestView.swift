@@ -35,7 +35,7 @@ struct RequestView: View {
                 //
                 Spacer()
                 NavigationLink(
-                    destination: ConfirmationView(amount: $amount),
+                    destination: ConfirmationView(amount: $amount, transactions:  []),
                     label: {
                         Text("Request")
                             .sendReceiveStyle()

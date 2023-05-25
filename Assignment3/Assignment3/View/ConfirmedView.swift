@@ -48,7 +48,7 @@ struct ConfirmedView: View {
 				}
 				confirmed = true
 			} catch {
-				
+				confirmed = false
 			}
 		}
     }

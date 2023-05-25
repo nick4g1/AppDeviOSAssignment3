@@ -4,36 +4,46 @@ struct SplitView: View {
     @FocusState private var amountIsFocused: Bool
     @State private var amount = 0.0
     @State private var selectedFriends: Set<String> = []
+	@StateObject private var viewModel = ProfileModel()
     let friends = Friends().generateFriends()
     
     var body: some View {
         ZStack {
+			if let user = viewModel.user {
             ColorUtils.backgroundColor.edgesIgnoringSafeArea(.all)
-            VStack(spacing: 20) {
-                Spacer()
-                HStack {
-                    Text("Amount:")
-                        .font(.title)
-                    TextField("Amount", value: $amount, format: .currency(code: "AUD"))
-                        .numberFieldStyle()
-                        .focused($amountIsFocused)
-                }
-                .alternatelabelStyle()
-                Text("With Who?")
-                    .font(.title)
-                Section {
-                    FriendsScrollView(amount: $amount, selectedFriends: $selectedFriends, friends: friends, toSplit: true)
-                }
-                Section {
-                    NavigationLink {
-                        ConfirmationView(amount: $amount, transactions: [])
-                    } label: {
-                        Text("Confirm")
-                            .confirmLabelStyle()
-                            .padding(.bottom)
-                    }
-                }
-                
+				VStack(spacing: 20) {
+					Spacer()
+					HStack {
+						Text("Amount:")
+							.font(.title)
+						TextField("Amount", value: $amount, format: .currency(code: "AUD"))
+							.numberFieldStyle()
+							.focused($amountIsFocused)
+					}
+					.alternatelabelStyle()
+					Text("With Who?")
+						.font(.title)
+					Section {
+						FriendsScrollView(amount: $amount, selectedFriends: $selectedFriends, friends: friends, toSplit: true)
+					}
+					Section {
+						NavigationLink {
+							var transactions: [UserTransaction] {
+								var result: [UserTransaction] = []
+								for friend in selectedFriends {
+									let transaction = UserTransaction(transactionId: "\(friend)\(Date())", amount: amount / Double(selectedFriends.count), sendingAccount: friend, recievingAccount: user.email, date: Date())
+									result.append(transaction)
+								}
+								return result
+							}
+							ConfirmationView(amount: $amount, transactions: transactions)
+						} label: {
+							Text("Confirm")
+								.confirmLabelStyle()
+								.padding(.bottom)
+						}
+					}
+				}
             }
         }
         .navigationBarTitle("Split", displayMode: .large)
@@ -44,6 +54,9 @@ struct SplitView: View {
                 }
             }
         }
+		.task {
+			try? await viewModel.loadUser()
+		}
     }
 }
 

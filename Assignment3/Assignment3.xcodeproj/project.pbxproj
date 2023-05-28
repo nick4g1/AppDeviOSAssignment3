@@ -39,7 +39,6 @@
 		9BAF45212A0FAF9F005C864B /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAF45202A0FAF9F005C864B /* ProfileModel.swift */; };
 		9BC24CD52A0F2C1800DC61F3 /* SplitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC24CD42A0F2C1800DC61F3 /* SplitView.swift */; };
 		9BC24CD72A0F37E300DC61F3 /* FriendModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC24CD62A0F37E300DC61F3 /* FriendModel.swift */; };
-		9BC24CDA2A0F38B300DC61F3 /* Fakery in Frameworks */ = {isa = PBXBuildFile; productRef = 9BC24CD92A0F38B300DC61F3 /* Fakery */; };
 		9BC24CDC2A0F499700DC61F3 /* FriendScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC24CDB2A0F499700DC61F3 /* FriendScrollView.swift */; };
 		9BD272DF2A1E154A005A0E42 /* TransactionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD272DE2A1E154A005A0E42 /* TransactionManager.swift */; };
 		9BD272E62A235AD1005A0E42 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD272E52A235AD1005A0E42 /* ProfileView.swift */; };
@@ -93,7 +92,6 @@
 			files = (
 				9B52718E2A0D09C500043141 /* FirebaseAnalyticsSwift in Frameworks */,
 				9B5271912A0DC8D700043141 /* FirebaseAuth in Frameworks */,
-				9BC24CDA2A0F38B300DC61F3 /* Fakery in Frameworks */,
 				9BA63B032A0A35A600CE3AA8 /* GoogleSignIn in Frameworks */,
 				9BA63B052A0A35A600CE3AA8 /* GoogleSignInSwift in Frameworks */,
 				9B52718C2A0D09C500043141 /* FirebaseAnalytics in Frameworks */,
@@ -279,7 +277,6 @@
 				9B52718B2A0D09C500043141 /* FirebaseAnalytics */,
 				9B52718D2A0D09C500043141 /* FirebaseAnalyticsSwift */,
 				9B5271902A0DC8D700043141 /* FirebaseAuth */,
-				9BC24CD92A0F38B300DC61F3 /* Fakery */,
 				9BAF45172A0FACB4005C864B /* FirebaseFirestore */,
 				9BAF45192A0FACB4005C864B /* FirebaseFirestoreSwift */,
 			);
@@ -652,11 +649,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 9B52718A2A0D09C500043141 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestoreSwift;
-		};
-		9BC24CD92A0F38B300DC61F3 /* Fakery */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 9BC24CD82A0F38B300DC61F3 /* XCRemoteSwiftPackageReference "Fakery" */;
-			productName = Fakery;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

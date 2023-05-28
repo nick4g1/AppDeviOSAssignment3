@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import Fakery
 
 struct Friend {
     let name: String

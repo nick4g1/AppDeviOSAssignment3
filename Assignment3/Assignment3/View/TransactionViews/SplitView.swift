@@ -10,7 +10,7 @@ struct SplitView: View {
     // Variable for selected friends
     @State private var selectedFriends: Set<String> = []
 	@StateObject private var viewModel = ProfileModel()
-    let friends = Friends().generateFriends()
+    @State var friends: [Friend] = []
     
     var body: some View {
         ZStack {
@@ -61,6 +61,13 @@ struct SplitView: View {
         }
 		.task {
 			try? await viewModel.loadUser()
+            if let user = viewModel.user {
+                do {
+                    friends = try await UserManager.shared.getFriends()
+                } catch {
+                    print(error)
+                }
+            }
 		}
     }
 }

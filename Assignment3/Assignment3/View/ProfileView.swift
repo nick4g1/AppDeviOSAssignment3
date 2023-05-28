@@ -58,6 +58,7 @@ struct ProfileView: View {
 
                         }
                         TextField("Add Friend:", text: $viewModel.friendToAdd)
+                            .autocapitalization(.none)
                         Button("Add Friend") {
                             Task {
                                 if !viewModel.friendToAdd.isEmpty {

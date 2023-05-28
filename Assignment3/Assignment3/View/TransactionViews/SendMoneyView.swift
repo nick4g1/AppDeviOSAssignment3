@@ -13,7 +13,7 @@ struct SendMoneyView: View {
 	@StateObject private var viewModel = ProfileModel()
     //Friends
     @State private var selectedFriends: Set<String> = []
-    let friends = Friends().generateFriends()
+    @State var friends:[Friend] = []
     //Initialize number formatter for CurrencyTextField
     init(numberFormatter: NumberFormatter = NumberFormatter()) {
             self.numberFormatter = numberFormatter
@@ -59,9 +59,16 @@ struct SendMoneyView: View {
 				.navigationTitle("Send Money")
 			}
         }
-		.task {
-			try? await viewModel.loadUser()
-		}
+        .task {
+            try? await viewModel.loadUser()
+            if let user = viewModel.user {
+                do {
+                    friends = try await UserManager.shared.getFriends()
+                } catch {
+                    print(error)
+                }
+            }
+        }
     }
     
     struct SendMoneyView_Previews: PreviewProvider {

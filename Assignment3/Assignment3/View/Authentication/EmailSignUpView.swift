@@ -14,12 +14,23 @@ struct EmailSignUpView: View {
     @State private var password = ""
     @State private var passwordCheck = ""
     
+    @State private var emailValid = false
+    @State private var passwordValid = false
+    @State private var passwordMatch = false
+    
     let viewModel = EmailAuthenticationHandler()
     
     var body: some View {
         ZStack {
             ColorUtils.backgroundColor.edgesIgnoringSafeArea(.all)
             VStack(spacing: 20) {
+                Image("Logo")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 150)
+                    .shadow(radius: 20)
+                Text("Sign Up With Email")
+                    .font(.custom("Quicksand-Regular", size: 40))
                 TextField("Email", text: $email)
                     .textFieldStyle()
                 SecureField("Password", text: $password)
@@ -43,7 +54,6 @@ struct EmailSignUpView: View {
                 Spacer()
             }
         }
-        .navigationTitle("Sign Up With Email")
     }
 }
 

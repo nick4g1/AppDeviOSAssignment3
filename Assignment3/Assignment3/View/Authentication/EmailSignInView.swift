@@ -19,6 +19,13 @@ struct EmailSignInView: View {
         ZStack {
             ColorUtils.backgroundColor.edgesIgnoringSafeArea(.all)
             VStack(spacing: 20) {
+                Image("Logo")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 150)
+                    .shadow(radius: 20)
+                Text("Sign In With Email")
+                    .font(.custom("Quicksand-Regular", size: 40))
                 TextField("Email...", text: $email)
                     .textFieldStyle()
                 SecureField("Password...", text: $password)
@@ -45,7 +52,6 @@ struct EmailSignInView: View {
                 Spacer()
             }
         }
-        .navigationBarTitle("Sign In With Email", displayMode: .large)
     }
 }
 

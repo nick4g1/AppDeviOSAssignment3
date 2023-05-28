@@ -112,6 +112,18 @@ final class UserManager {
         user.friends = friendArray
         try await UserManager.shared.updateProfile(user: user)
     }
+    
+    // Retrieves a users friends and get associated name
+    func getFriends() async throws -> [Friend] {
+        let user = try await loadCurrentUser()
+        var friends = [Friend]()
+        for friendEmail in user.friends {
+            let friendDocument = try? await getUser(email: friendEmail)
+            let friend = Friend(name: friendDocument?.name ?? "", email: friendEmail)
+            friends.append(friend)
+        }
+        return friends
+    }
 
     // Loads the user document from firestore for the currently signed in user
     func loadCurrentUser() async throws -> UserProfile {

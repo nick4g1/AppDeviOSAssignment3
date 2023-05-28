@@ -38,7 +38,7 @@
 		9BAF451A2A0FACB4005C864B /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 9BAF45192A0FACB4005C864B /* FirebaseFirestoreSwift */; };
 		9BAF45212A0FAF9F005C864B /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAF45202A0FAF9F005C864B /* ProfileModel.swift */; };
 		9BC24CD52A0F2C1800DC61F3 /* SplitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC24CD42A0F2C1800DC61F3 /* SplitView.swift */; };
-		9BC24CD72A0F37E300DC61F3 /* Friends.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC24CD62A0F37E300DC61F3 /* Friends.swift */; };
+		9BC24CD72A0F37E300DC61F3 /* FriendModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC24CD62A0F37E300DC61F3 /* FriendModel.swift */; };
 		9BC24CDA2A0F38B300DC61F3 /* Fakery in Frameworks */ = {isa = PBXBuildFile; productRef = 9BC24CD92A0F38B300DC61F3 /* Fakery */; };
 		9BC24CDC2A0F499700DC61F3 /* FriendScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC24CDB2A0F499700DC61F3 /* FriendScrollView.swift */; };
 		9BD272DF2A1E154A005A0E42 /* TransactionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD272DE2A1E154A005A0E42 /* TransactionManager.swift */; };
@@ -76,7 +76,7 @@
 		9BA63AFA2A0A184300CE3AA8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9BAF45202A0FAF9F005C864B /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
 		9BC24CD42A0F2C1800DC61F3 /* SplitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitView.swift; sourceTree = "<group>"; };
-		9BC24CD62A0F37E300DC61F3 /* Friends.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friends.swift; sourceTree = "<group>"; };
+		9BC24CD62A0F37E300DC61F3 /* FriendModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendModel.swift; sourceTree = "<group>"; };
 		9BC24CDB2A0F499700DC61F3 /* FriendScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendScrollView.swift; sourceTree = "<group>"; };
 		9BD272DE2A1E154A005A0E42 /* TransactionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionManager.swift; sourceTree = "<group>"; };
 		9BD272E52A235AD1005A0E42 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
@@ -172,7 +172,7 @@
 			children = (
 				9B843C1F2A1753860002CDBE /* Firestore */,
 				9BAF451D2A0FAD68005C864B /* Authentication */,
-				9BC24CD62A0F37E300DC61F3 /* Friends.swift */,
+				9BC24CD62A0F37E300DC61F3 /* FriendModel.swift */,
 				9BAF45202A0FAF9F005C864B /* ProfileModel.swift */,
 			);
 			path = Model;
@@ -352,7 +352,7 @@
 				9BAF45212A0FAF9F005C864B /* ProfileModel.swift in Sources */,
 				9B2F9D922A2303EE00C7B903 /* ApplicationError.swift in Sources */,
 				C612616F2A0F2C1D00E083EA /* SendMoneyView.swift in Sources */,
-				9BC24CD72A0F37E300DC61F3 /* Friends.swift in Sources */,
+				9BC24CD72A0F37E300DC61F3 /* FriendModel.swift in Sources */,
 				C69225912A19FB5400644D70 /* CurrencyTextField.swift in Sources */,
 				9B5271A12A0DDB5500043141 /* InitialView.swift in Sources */,
 				9B843C212A1753B70002CDBE /* UserManager.swift in Sources */,

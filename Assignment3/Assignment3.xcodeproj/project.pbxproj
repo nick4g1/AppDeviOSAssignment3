@@ -36,13 +36,13 @@
 		9BA63B052A0A35A600CE3AA8 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 9BA63B042A0A35A600CE3AA8 /* GoogleSignInSwift */; };
 		9BAF45182A0FACB4005C864B /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 9BAF45172A0FACB4005C864B /* FirebaseFirestore */; };
 		9BAF451A2A0FACB4005C864B /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 9BAF45192A0FACB4005C864B /* FirebaseFirestoreSwift */; };
-		9BAF451F2A0FAE52005C864B /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAF451E2A0FAE52005C864B /* ProfileView.swift */; };
 		9BAF45212A0FAF9F005C864B /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAF45202A0FAF9F005C864B /* ProfileModel.swift */; };
 		9BC24CD52A0F2C1800DC61F3 /* SplitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC24CD42A0F2C1800DC61F3 /* SplitView.swift */; };
 		9BC24CD72A0F37E300DC61F3 /* Friends.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC24CD62A0F37E300DC61F3 /* Friends.swift */; };
 		9BC24CDA2A0F38B300DC61F3 /* Fakery in Frameworks */ = {isa = PBXBuildFile; productRef = 9BC24CD92A0F38B300DC61F3 /* Fakery */; };
 		9BC24CDC2A0F499700DC61F3 /* FriendScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC24CDB2A0F499700DC61F3 /* FriendScrollView.swift */; };
 		9BD272DF2A1E154A005A0E42 /* TransactionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD272DE2A1E154A005A0E42 /* TransactionManager.swift */; };
+		9BD272E62A235AD1005A0E42 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD272E52A235AD1005A0E42 /* ProfileView.swift */; };
 		C612616F2A0F2C1D00E083EA /* SendMoneyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C612616E2A0F2C1D00E083EA /* SendMoneyView.swift */; };
 		C61261712A0F457E00E083EA /* SendMoneyNumberPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61261702A0F457E00E083EA /* SendMoneyNumberPad.swift */; };
 		C692258F2A19FB0900644D70 /* CurrencyUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C692258E2A19FB0900644D70 /* CurrencyUITextField.swift */; };
@@ -74,12 +74,12 @@
 		9BA63AF32A0A184200CE3AA8 /* Assignment3App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assignment3App.swift; sourceTree = "<group>"; };
 		9BA63AF72A0A184300CE3AA8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9BA63AFA2A0A184300CE3AA8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		9BAF451E2A0FAE52005C864B /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		9BAF45202A0FAF9F005C864B /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
 		9BC24CD42A0F2C1800DC61F3 /* SplitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitView.swift; sourceTree = "<group>"; };
 		9BC24CD62A0F37E300DC61F3 /* Friends.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friends.swift; sourceTree = "<group>"; };
 		9BC24CDB2A0F499700DC61F3 /* FriendScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendScrollView.swift; sourceTree = "<group>"; };
 		9BD272DE2A1E154A005A0E42 /* TransactionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionManager.swift; sourceTree = "<group>"; };
+		9BD272E52A235AD1005A0E42 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		C612616E2A0F2C1D00E083EA /* SendMoneyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMoneyView.swift; sourceTree = "<group>"; };
 		C61261702A0F457E00E083EA /* SendMoneyNumberPad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMoneyNumberPad.swift; sourceTree = "<group>"; };
 		C692258E2A19FB0900644D70 /* CurrencyUITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyUITextField.swift; sourceTree = "<group>"; };
@@ -162,7 +162,7 @@
 				9B2F9D932A23080D00C7B903 /* TransactionViews */,
 				9BAF451B2A0FAD37005C864B /* Core */,
 				9B5271AC2A0E080B00043141 /* Authentication */,
-				9BAF451E2A0FAE52005C864B /* ProfileView.swift */,
+				9BD272E52A235AD1005A0E42 /* ProfileView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -348,6 +348,7 @@
 				3AED06272A0F52A500FAF7DA /* ConfirmedView.swift in Sources */,
 				3AED06232A0F2C3200FAF7DA /* RequestView.swift in Sources */,
 				9B5271A92A0E015D00043141 /* EmailAuthenticationHandler.swift in Sources */,
+				9BD272E62A235AD1005A0E42 /* ProfileView.swift in Sources */,
 				9BAF45212A0FAF9F005C864B /* ProfileModel.swift in Sources */,
 				9B2F9D922A2303EE00C7B903 /* ApplicationError.swift in Sources */,
 				C612616F2A0F2C1D00E083EA /* SendMoneyView.swift in Sources */,
@@ -371,7 +372,6 @@
 				9BC24CDC2A0F499700DC61F3 /* FriendScrollView.swift in Sources */,
 				9B52719F2A0DCFE900043141 /* AuthenticationManager.swift in Sources */,
 				9B5271982A0DCBA100043141 /* EmailSignInView.swift in Sources */,
-				9BAF451F2A0FAE52005C864B /* ProfileView.swift in Sources */,
 				9B5271AB2A0E05B900043141 /* EmailSignUpView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

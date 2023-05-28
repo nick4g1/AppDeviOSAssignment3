@@ -9,11 +9,14 @@ import Foundation
 
 final class ProfileModel: ObservableObject {
     
-    @Published private(set) var user: UserProfile? = nil
+    @Published var user: UserProfile? = nil
+    @Published var name: String = ""
+    @Published var friendToAdd = ""
     
     @MainActor
     func loadUser() async throws {
         self.user = try await UserManager.shared.loadCurrentUser()
+        name = self.user?.name ?? ""
     }
 
 }

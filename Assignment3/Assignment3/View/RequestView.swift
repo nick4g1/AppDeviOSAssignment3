@@ -13,47 +13,59 @@ struct RequestView: View {
     @FocusState private var amountIsFocused: Bool
     @State private var amount = 0.0
     @State private var selectedFriends: Set<String> = []
+	@StateObject private var viewModel = ProfileModel()
     let friends = Friends().generateFriends()
     
     var body: some View {
-        ZStack {
-            ColorUtils.backgroundColor.edgesIgnoringSafeArea(.all)
-            VStack(spacing: 20) {
-                Spacer()
-                HStack {
-                    Text("Amount:")
-                        .font(.title)
-                    TextField("Amount", value: $amount, format: .currency(code: "AUD"))
-                        .numberFieldStyle()
-                        .focused($amountIsFocused)
-                }
-                .alternatelabelStyle()
-                Text("From Who?")
-                    .font(.title)
-                // Here comes the scrollstack
-                FriendsScrollView(amount: $amount, selectedFriends: $selectedFriends, friends: friends, toSplit: false)
-                //
-                Spacer()
-                NavigationLink(
-                    destination: ConfirmationView(amount: $amount),
-                    label: {
-                        Text("Request")
-                            .sendReceiveStyle()
-                    }
-                )
-
-            }
+		ZStack {
+			if let user = viewModel.user {
+				ColorUtils.backgroundColor.edgesIgnoringSafeArea(.all)
+				VStack(spacing: 20) {
+					Spacer()
+					HStack {
+						Text("Amount:")
+							.font(.title)
+						TextField("Amount", value: $amount, format: .currency(code: "AUD"))
+							.numberFieldStyle()
+							.focused($amountIsFocused)
+					}
+					.alternatelabelStyle()
+					Text("From Who?")
+						.font(.title)
+					// Here comes the scrollstack
+					FriendsScrollView(amount: $amount, selectedFriends: $selectedFriends, friends: friends, toSplit: false)
+					Spacer()
+					NavigationLink {
+						var transactions: [UserTransaction] {
+							var result: [UserTransaction] = []
+							for friend in selectedFriends {
+									
+								let transaction = UserTransaction(transactionId: "\(friend)\(Date())", amount: amount / Double(selectedFriends.count), sendingAccount: friend, recievingAccount: user.email, date: Date())
+								result.append(transaction)
+							}
+							return result
+						}
+						ConfirmationView(amount: $amount, transactions:  transactions)
+					} label: {
+						Text("Request")
+							.sendReceiveStyle()
+					}
+					
+				}
+			}
 
         }
         .navigationBarTitle("Request", displayMode: .large)
-            .toolbar {
-                ToolbarItemGroup(placement: .keyboard) {
-                    Button("Done") {
-                        amountIsFocused = false
-                    }
-                }
-            }
-        
+		.toolbar {
+			ToolbarItemGroup(placement: .keyboard) {
+				Button("Done") {
+					amountIsFocused = false
+				}
+			}
+		}
+		.task {
+			try? await viewModel.loadUser()
+		}
         
     }
 }

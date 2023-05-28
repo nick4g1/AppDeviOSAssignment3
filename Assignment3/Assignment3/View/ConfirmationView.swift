@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ConfirmationView: View {
     @Binding var amount: Double
+	@State var transactions: [UserTransaction]
     @State private var translation: CGFloat = 0
     @State private var isCancelled = false
     var body: some View {
@@ -23,7 +24,7 @@ struct ConfirmationView: View {
                 
                                 NavigationLink (
                                     // Link to Confirmed view
-                                destination: ConfirmedView(amount: $amount),
+                                destination: ConfirmedView(amount: $amount, transactions: transactions),
                                  label: {
                                     Text("Confirm")
                                         .font(.headline)
@@ -44,7 +45,7 @@ struct ConfirmationView: View {
 
 struct ConfirmationView_Previews: PreviewProvider {
     static var previews: some View {
-        ConfirmationView(amount: .constant(0.0))
+        ConfirmationView(amount: .constant(0.0), transactions: [])
     }
 }
 

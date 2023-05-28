@@ -12,3 +12,10 @@ import Foundation
 enum ApplicationError: Error {
     case UserNotRetrieved
 }
+
+
+enum SignInErrors: Error {
+    case fieldsNotComplete(String)
+    case passwordTooShort(String)
+    case passwordsDontMatch(String)
+}

@@ -15,7 +15,9 @@ final class AuthenticationViewModel: ObservableObject {
         let tokens = try await helper.signInGoogle()
         let authDataResult = try await AuthenticationManager.shared.signInWithGoogle(tokens: tokens)
         let user = UserProfile(auth: authDataResult)
-        try await UserManager.shared.createNewUser(user: user)
-//        try await UserManager.shared.createNewUser(auth: authDataResult)
+        let userDocument = try? await UserManager.shared.getUser(email: user.email)
+        if userDocument == nil {
+            try await UserManager.shared.createNewUser(user: user)
+        }
     }
 }

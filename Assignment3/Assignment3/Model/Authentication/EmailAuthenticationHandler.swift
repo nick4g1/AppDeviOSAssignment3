@@ -7,19 +7,7 @@
 
 import Foundation
 
-enum SignInErrors: Error {
-    case fieldsNotComplete(String)
-    case passwordTooShort(String)
-    case passwordsDontMatch(String)
-}
-
 final class EmailAuthenticationHandler {
-    
-    enum SignInErrors: Error {
-        case fieldsNotComplete(String)
-        case passwordTooShort(String)
-        case passwordsDontMatch(String)
-    }
     
     func signUp(email: String, password: String, passwordCheck: String) async throws {
         // TODO: Add validation here

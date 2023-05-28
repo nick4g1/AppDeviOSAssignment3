@@ -106,7 +106,7 @@ final class UserManager {
 
     // Adds another users email to friend array of signed in profile
     func addFriend(friendEmail: String) async throws {
-        var user = try await UserManager.shared.loadCurrentUser()
+        var user = try await UserManager.shared.loadCurrentUserDocument()
         var friendArray = user.friends
         friendArray.append(friendEmail)
         user.friends = friendArray
@@ -115,7 +115,7 @@ final class UserManager {
     
     // Retrieves a users friends and get associated name
     func getFriends() async throws -> [Friend] {
-        let user = try await loadCurrentUser()
+        let user = try await loadCurrentUserDocument()
         var friends = [Friend]()
         for friendEmail in user.friends {
             let friendDocument = try? await getUser(email: friendEmail)
@@ -126,7 +126,7 @@ final class UserManager {
     }
 
     // Loads the user document from firestore for the currently signed in user
-    func loadCurrentUser() async throws -> UserProfile {
+    func loadCurrentUserDocument() async throws -> UserProfile {
         let authDataResult = try AuthenticationManager.shared.getAuthenticatedUser()
         let user = try await UserManager.shared.getUser(email: authDataResult.email)
         return user

@@ -17,7 +17,17 @@ struct SplitView: View {
 			if let user = viewModel.user {
             ColorUtils.backgroundColor.edgesIgnoringSafeArea(.all)
 				VStack(spacing: 20) {
-					Spacer()
+                    HStack {
+                        Text("Split")
+                            .font(.custom("Quicksand-Regular", size: 45))
+                            .foregroundColor(.black)
+                        Image(systemName: "divide.circle.fill")
+                            .resizable()
+                            .foregroundColor(.black)
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 35)
+
+                    }
 					HStack {
 						Text("Amount:")
 							.font(.title)
@@ -51,7 +61,6 @@ struct SplitView: View {
 				}
             }
         }
-        .navigationBarTitle("Split", displayMode: .large)
         .toolbar {
             ToolbarItemGroup(placement: .keyboard) {
                 Button("Done") {

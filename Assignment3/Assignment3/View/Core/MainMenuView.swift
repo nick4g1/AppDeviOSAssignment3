@@ -13,67 +13,91 @@ struct MainMenuView: View {
         ZStack {
             ColorUtils.backgroundColor.edgesIgnoringSafeArea(.all)
             VStack(spacing: 20) {
-                Spacer()
+                Image("Logo")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 150)
+                    .shadow(radius: 20)
+                Text("Split Mate")
+                    .font(.custom("Quicksand-Regular", size: 50))
+                    .foregroundColor(ColorUtils.textColour)
+
                 NavigationLink {
                     SplitView()
                 } label: {
-                    Text("Split")
-                        .font(.headline)
-                        .foregroundColor(.white)
-                        .frame(height: 55)
-                        .frame(maxWidth: 300)
-                        .background(Color.orange)
-                        .cornerRadius(10)
-                        .shadow(radius: 20)
+                    HStack {
+                        Text("Split")
+                            .font(.title2)
+                            .foregroundColor(.white)
+                        Image(systemName: "divide.circle.fill")
+                            .resizable()
+                            .foregroundColor(.white)
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 25)
+
+                    }
+                    .coloredLabelStyle(.orange)
                 }
                 NavigationLink {
                     // Link to request view
                     RequestView()
                 } label: {
-                    Text("Request")
-                        .font(.headline)
-                        .foregroundColor(.white)
-                        .frame(height: 55)
-                        .frame(maxWidth: 300)
-                        .background(Color.red)
-                        .cornerRadius(10)
-                        .shadow(radius: 20)
+                    HStack {
+                        Text("Request")
+                            .font(.title2)
+                            .foregroundColor(.white)
+                        Image(systemName: "dollarsign.arrow.circlepath")
+                            .resizable()
+                            .foregroundColor(.white)
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 25)
+                    }
+                    .coloredLabelStyle(.red)
                 }
                 NavigationLink {
                     SendMoneyView()
                 } label: {
-                    Text("Send")
-                        .font(.headline)
-                        .foregroundColor(.white)
-                        .frame(height: 55)
-                        .frame(maxWidth: 300)
-                        .background(Color.blue)
-                        .cornerRadius(10)
-                        .shadow(radius: 20)
+                    HStack {
+                        Text("Send")
+                            .font(.title2)
+                            .foregroundColor(.white)
+                        Image(systemName: "paperplane.circle")
+                            .resizable()
+                            .foregroundColor(.white)
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 25)
+                    }
+                    .coloredLabelStyle(.blue)
                 }
                 NavigationLink {
                     TrackView()
                 } label: {
-                    Text("Track")
-                        .font(.headline)
-                        .foregroundColor(.white)
-                        .frame(height: 55)
-                        .frame(maxWidth: 300)
-                        .background(Color.green)
-                        .cornerRadius(10)
-                        .shadow(radius: 20)
+                    HStack {
+                        Text("Track")
+                            .font(.title2)
+                            .foregroundColor(.white)
+                        Image(systemName: "list.clipboard.fill")
+                            .resizable()
+                            .foregroundColor(.white)
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 20)
+                    }
+                    .coloredLabelStyle(.green)
                 }
                 NavigationLink {
                     ProfileView()
                 } label: {
-                    Text("Profile")
-                        .font(.headline)
-                        .foregroundColor(.white)
-                        .frame(height: 55)
-                        .frame(maxWidth: 300)
-                        .background(Color.yellow)
-                        .cornerRadius(10)
-                        .shadow(radius: 20)
+                    HStack {
+                        Text("Profile")
+                            .font(.title2)
+                            .foregroundColor(.white)
+                        Image(systemName: "person.circle")
+                            .resizable()
+                            .foregroundColor(.white)
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 25)
+                    }
+                    .coloredLabelStyle(.yellow)
                 }
                 Button {
                     Task {
@@ -85,12 +109,20 @@ struct MainMenuView: View {
                         }
                     }
                 } label: {
-                    Text("Logout")
+                    HStack {
+                        Text("Logout")
+                            .font(.title2)
+                            .foregroundColor(.black)
+                        Image(systemName: "nosign")
+                            .resizable()
+                            .foregroundColor(.black)
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 25)
+                    }
                         .headingLabelStyle()
                 }
             }
         }
-        .navigationTitle("Split Mate")
     }
 }
 

@@ -15,7 +15,7 @@ final class ProfileModel: ObservableObject {
     
     @MainActor
     func loadUser() async throws {
-        self.user = try await UserManager.shared.loadCurrentUser()
+        self.user = try await UserManager.shared.loadCurrentUserDocument()
         name = self.user?.name ?? ""
     }
 

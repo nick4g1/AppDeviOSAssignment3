@@ -15,8 +15,9 @@ import FirebaseFirestoreSwift
 struct UserProfile: Codable {
     let userId: String
     let email: String
+    var name: String
     let photoUrl: String?
-    let dateCreated: Date?
+    let dateCreated: Date
     var balance: Double
     var recieved: Double
     var sent: Double
@@ -27,6 +28,7 @@ struct UserProfile: Codable {
     init(auth: AuthDataResultModel) {
         self.userId = auth.uid
         self.email = auth.email
+        self.name = ""
         self.photoUrl = auth.photoUrl
         self.dateCreated = Date()
         self.balance = 0.0

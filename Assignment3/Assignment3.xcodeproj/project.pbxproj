@@ -8,10 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		09A619162A18C3E6002ACE3B /* TrackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A619152A18C3E6002ACE3B /* TrackView.swift */; };
-		0C78E7432A1B6924004D963F /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C78E7422A1B6924004D963F /* Profile.swift */; };
 		3AED06232A0F2C3200FAF7DA /* RequestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AED06222A0F2C3200FAF7DA /* RequestView.swift */; };
 		3AED06252A0F3A9700FAF7DA /* ConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AED06242A0F3A9700FAF7DA /* ConfirmationView.swift */; };
 		3AED06272A0F52A500FAF7DA /* ConfirmedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AED06262A0F52A500FAF7DA /* ConfirmedView.swift */; };
+		9B2F9D902A22FED700C7B903 /* Quicksand-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9B2F9D8F2A22FED700C7B903 /* Quicksand-Regular.ttf */; };
+		9B2F9D922A2303EE00C7B903 /* ApplicationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2F9D912A2303EE00C7B903 /* ApplicationError.swift */; };
 		9B4C80BE2A0E174000CE81BA /* GoogleSignInHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4C80BD2A0E174000CE81BA /* GoogleSignInHelper.swift */; };
 		9B4C80C02A0E18FC00CE81BA /* ViewUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4C80BF2A0E18FC00CE81BA /* ViewUtils.swift */; };
 		9B5271892A0D090600043141 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9B5271882A0D090600043141 /* GoogleService-Info.plist */; };
@@ -28,7 +29,6 @@
 		9B5271A92A0E015D00043141 /* EmailAuthenticationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5271A82A0E015D00043141 /* EmailAuthenticationHandler.swift */; };
 		9B5271AB2A0E05B900043141 /* EmailSignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5271AA2A0E05B900043141 /* EmailSignUpView.swift */; };
 		9B843C212A1753B70002CDBE /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B843C202A1753B70002CDBE /* UserManager.swift */; };
-		9B843C232A1756D70002CDBE /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B843C222A1756D70002CDBE /* AuthenticationViewModel.swift */; };
 		9BA63AF42A0A184200CE3AA8 /* Assignment3App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA63AF32A0A184200CE3AA8 /* Assignment3App.swift */; };
 		9BA63AF82A0A184300CE3AA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BA63AF72A0A184300CE3AA8 /* Assets.xcassets */; };
 		9BA63AFB2A0A184300CE3AA8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BA63AFA2A0A184300CE3AA8 /* Preview Assets.xcassets */; };
@@ -51,10 +51,11 @@
 
 /* Begin PBXFileReference section */
 		09A619152A18C3E6002ACE3B /* TrackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackView.swift; sourceTree = "<group>"; };
-		0C78E7422A1B6924004D963F /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		3AED06222A0F2C3200FAF7DA /* RequestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestView.swift; sourceTree = "<group>"; };
 		3AED06242A0F3A9700FAF7DA /* ConfirmationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationView.swift; sourceTree = "<group>"; };
 		3AED06262A0F52A500FAF7DA /* ConfirmedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmedView.swift; sourceTree = "<group>"; };
+		9B2F9D8F2A22FED700C7B903 /* Quicksand-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Regular.ttf"; sourceTree = "<group>"; };
+		9B2F9D912A2303EE00C7B903 /* ApplicationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationError.swift; sourceTree = "<group>"; };
 		9B4C80BC2A0E13F500CE81BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		9B4C80BD2A0E174000CE81BA /* GoogleSignInHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSignInHelper.swift; sourceTree = "<group>"; };
 		9B4C80BF2A0E18FC00CE81BA /* ViewUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewUtils.swift; sourceTree = "<group>"; };
@@ -69,7 +70,6 @@
 		9B5271A82A0E015D00043141 /* EmailAuthenticationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailAuthenticationHandler.swift; sourceTree = "<group>"; };
 		9B5271AA2A0E05B900043141 /* EmailSignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSignUpView.swift; sourceTree = "<group>"; };
 		9B843C202A1753B70002CDBE /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
-		9B843C222A1756D70002CDBE /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
 		9BA63AF02A0A184200CE3AA8 /* Split Mate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Split Mate.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BA63AF32A0A184200CE3AA8 /* Assignment3App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assignment3App.swift; sourceTree = "<group>"; };
 		9BA63AF72A0A184300CE3AA8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -105,6 +105,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9B2F9D8C2A22FD6E00C7B903 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				9B2F9D8F2A22FED700C7B903 /* Quicksand-Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		9B2F9D932A23080D00C7B903 /* TransactionViews */ = {
+			isa = PBXGroup;
+			children = (
+				9B2F9D942A23082600C7B903 /* SubViews */,
+				9BC24CD42A0F2C1800DC61F3 /* SplitView.swift */,
+				09A619152A18C3E6002ACE3B /* TrackView.swift */,
+				3AED06222A0F2C3200FAF7DA /* RequestView.swift */,
+				C612616E2A0F2C1D00E083EA /* SendMoneyView.swift */,
+			);
+			path = TransactionViews;
+			sourceTree = "<group>";
+		};
+		9B2F9D942A23082600C7B903 /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				9BC24CDB2A0F499700DC61F3 /* FriendScrollView.swift */,
+				C61261702A0F457E00E083EA /* SendMoneyNumberPad.swift */,
+				3AED06242A0F3A9700FAF7DA /* ConfirmationView.swift */,
+				3AED06262A0F52A500FAF7DA /* ConfirmedView.swift */,
+			);
+			path = SubViews;
+			sourceTree = "<group>";
+		};
 		9B52718F2A0DC8D700043141 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +146,7 @@
 		9B5271992A0DCC5D00043141 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				9B2F9D912A2303EE00C7B903 /* ApplicationError.swift */,
 				9B52719A2A0DCC7100043141 /* ColorUtils.swift */,
 				9B52719C2A0DCE5C00043141 /* ViewModifierUtils.swift */,
 				9B4C80BF2A0E18FC00CE81BA /* ViewUtils.swift */,
@@ -127,16 +159,9 @@
 		9B5271A22A0DDE1800043141 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				9BAF451C2A0FAD4D005C864B /* Helper */,
+				9B2F9D932A23080D00C7B903 /* TransactionViews */,
 				9BAF451B2A0FAD37005C864B /* Core */,
 				9B5271AC2A0E080B00043141 /* Authentication */,
-				C612616E2A0F2C1D00E083EA /* SendMoneyView.swift */,
-				C61261702A0F457E00E083EA /* SendMoneyNumberPad.swift */,
-				09A619152A18C3E6002ACE3B /* TrackView.swift */,
-				3AED06222A0F2C3200FAF7DA /* RequestView.swift */,
-				3AED06242A0F3A9700FAF7DA /* ConfirmationView.swift */,
-				9BC24CD42A0F2C1800DC61F3 /* SplitView.swift */,
-				3AED06262A0F52A500FAF7DA /* ConfirmedView.swift */,
 				9BAF451E2A0FAE52005C864B /* ProfileView.swift */,
 			);
 			path = View;
@@ -148,7 +173,6 @@
 				9B843C1F2A1753860002CDBE /* Firestore */,
 				9BAF451D2A0FAD68005C864B /* Authentication */,
 				9BC24CD62A0F37E300DC61F3 /* Friends.swift */,
-				0C78E7422A1B6924004D963F /* Profile.swift */,
 				9BAF45202A0FAF9F005C864B /* ProfileModel.swift */,
 			);
 			path = Model;
@@ -193,6 +217,7 @@
 		9BA63AF22A0A184200CE3AA8 /* Assignment3 */ = {
 			isa = PBXGroup;
 			children = (
+				9B2F9D8C2A22FD6E00C7B903 /* Fonts */,
 				9B4C80BC2A0E13F500CE81BA /* Info.plist */,
 				9B5271A52A0DDF5C00043141 /* Model */,
 				9B5271A22A0DDE1800043141 /* View */,
@@ -222,21 +247,12 @@
 			path = Core;
 			sourceTree = "<group>";
 		};
-		9BAF451C2A0FAD4D005C864B /* Helper */ = {
-			isa = PBXGroup;
-			children = (
-				9BC24CDB2A0F499700DC61F3 /* FriendScrollView.swift */,
-			);
-			path = Helper;
-			sourceTree = "<group>";
-		};
 		9BAF451D2A0FAD68005C864B /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
 				9B52719E2A0DCFE900043141 /* AuthenticationManager.swift */,
 				9B5271A82A0E015D00043141 /* EmailAuthenticationHandler.swift */,
 				9B4C80BD2A0E174000CE81BA /* GoogleSignInHelper.swift */,
-				9B843C222A1756D70002CDBE /* AuthenticationViewModel.swift */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -318,6 +334,7 @@
 				9BA63AFB2A0A184300CE3AA8 /* Preview Assets.xcassets in Resources */,
 				9BA63AF82A0A184300CE3AA8 /* Assets.xcassets in Resources */,
 				9B5271892A0D090600043141 /* GoogleService-Info.plist in Resources */,
+				9B2F9D902A22FED700C7B903 /* Quicksand-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,10 +346,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				3AED06272A0F52A500FAF7DA /* ConfirmedView.swift in Sources */,
-				0C78E7432A1B6924004D963F /* Profile.swift in Sources */,
 				3AED06232A0F2C3200FAF7DA /* RequestView.swift in Sources */,
 				9B5271A92A0E015D00043141 /* EmailAuthenticationHandler.swift in Sources */,
 				9BAF45212A0FAF9F005C864B /* ProfileModel.swift in Sources */,
+				9B2F9D922A2303EE00C7B903 /* ApplicationError.swift in Sources */,
 				C612616F2A0F2C1D00E083EA /* SendMoneyView.swift in Sources */,
 				9BC24CD72A0F37E300DC61F3 /* Friends.swift in Sources */,
 				C69225912A19FB5400644D70 /* CurrencyTextField.swift in Sources */,
@@ -344,7 +361,6 @@
 				9BD272DF2A1E154A005A0E42 /* TransactionManager.swift in Sources */,
 				9B4C80BE2A0E174000CE81BA /* GoogleSignInHelper.swift in Sources */,
 				9B5271A42A0DDE2F00043141 /* MainMenuView.swift in Sources */,
-				9B843C232A1756D70002CDBE /* AuthenticationViewModel.swift in Sources */,
 				9BC24CD52A0F2C1800DC61F3 /* SplitView.swift in Sources */,
 				9B52719B2A0DCC7100043141 /* ColorUtils.swift in Sources */,
 				9BA63AF42A0A184200CE3AA8 /* Assignment3App.swift in Sources */,

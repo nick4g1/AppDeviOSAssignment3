@@ -18,7 +18,6 @@ struct AuthenticationView: View {
     @Binding var showSignInView: Bool
     // Declare bool that is set to true if google sign in fails
     @State private var googleSignInError = false
-    @StateObject private var viewModel = AuthenticationViewModel()
 
     var body: some View {
         ZStack {
@@ -40,7 +39,7 @@ struct AuthenticationView: View {
                 Button {
                     Task {
                         do {
-                            try await viewModel.signInGoogle()
+                            try await AuthenticationManager.shared.signInGoogleFlow()
                             showSignInView = false
                         } catch {
                             googleSignInError = true

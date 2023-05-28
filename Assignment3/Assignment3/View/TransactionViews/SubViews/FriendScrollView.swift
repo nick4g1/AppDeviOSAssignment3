@@ -7,7 +7,10 @@
 
 import SwiftUI
 
+// Scrolling view that is populated with friends from profile
 struct FriendsScrollView: View {
+    
+    // Bindings for amount of money to send or request and friends that have been selected
     @Binding var amount: Double
     @Binding var selectedFriends: Set<String>
     let friends: [Friend]

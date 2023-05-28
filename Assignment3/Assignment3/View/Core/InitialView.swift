@@ -24,7 +24,7 @@ struct InitialView: View {
 
             }
         }
-        
+
         // When view appears tries to retrieve signed in user from local storage
         .onAppear {
             let authUser = try? AuthenticationManager.shared.getAuthenticatedUser()

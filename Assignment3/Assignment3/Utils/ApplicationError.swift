@@ -8,12 +8,12 @@
 import Foundation
 
 
-
+// Custom error if user cannot be retrieved from local storage
 enum ApplicationError: Error {
     case UserNotRetrieved
 }
 
-
+// Custom errors for input validation
 enum SignInErrors: LocalizedError {
     case fieldsNotComplete(String)
     case passwordsDontMatch(String)

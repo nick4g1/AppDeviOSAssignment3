@@ -8,6 +8,8 @@
 import Foundation
 import SwiftUI
 
+// Various structs to represent different ViewModifiers used throughout app
+
 struct HeadingLabelStyle: ViewModifier {
     func body(content: Content) -> some View {
         content

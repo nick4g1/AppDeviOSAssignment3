@@ -57,6 +57,19 @@ final class AuthenticationManager {
         return try await signInWithCredential(credential: credential)
     }
 
+    // Launches Google Sign In pop up and create news document for user if sign-in successful
+    @MainActor
+    func signInGoogleFlow() async throws {
+        let helper = GoogleSignInHelper()
+        let tokens = try await helper.signInGoogle()
+        let authDataResult = try await signInWithGoogle(tokens: tokens)
+        let user = UserProfile(auth: authDataResult)
+        let userDocument = try? await UserManager.shared.getUser(email: user.email)
+        if userDocument == nil {
+            try await UserManager.shared.createNewUser(user: user)
+        }
+    }
+
     // Sign in with crdential function used with Google
     func signInWithCredential(credential: AuthCredential) async throws -> AuthDataResultModel {
         let authDataResult = try await Auth.auth().signIn(with: credential)

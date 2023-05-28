@@ -1,8 +1,13 @@
 import SwiftUI
 
+// View for splitting an amount with multiple friends
 struct SplitView: View {
+    
+    // Focus state to allow dismissing of keyboard when tapped elsewhere
     @FocusState private var amountIsFocused: Bool
+    // Variable for amount entered into textfield
     @State private var amount = 0.0
+    // Variable for selected friends
     @State private var selectedFriends: Set<String> = []
 	@StateObject private var viewModel = ProfileModel()
     let friends = Friends().generateFriends()

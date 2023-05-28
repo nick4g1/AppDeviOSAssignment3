@@ -14,8 +14,16 @@ enum ApplicationError: Error {
 }
 
 
-enum SignInErrors: Error {
+enum SignInErrors: LocalizedError {
     case fieldsNotComplete(String)
-    case passwordTooShort(String)
     case passwordsDontMatch(String)
+
+    var errorDescription: String? {
+        switch self {
+        case .fieldsNotComplete(let message):
+            return message
+        case .passwordsDontMatch(let message):
+            return message
+        }
+    }
 }

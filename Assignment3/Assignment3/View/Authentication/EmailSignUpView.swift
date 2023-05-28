@@ -14,9 +14,8 @@ struct EmailSignUpView: View {
     @State private var password = ""
     @State private var passwordCheck = ""
     
-    @State private var emailValid = false
-    @State private var passwordValid = false
-    @State private var passwordMatch = false
+    @State private var signUpError = false
+    @State private var errorMessage = ""
     
     let viewModel = EmailAuthenticationHandler()
     
@@ -42,8 +41,12 @@ struct EmailSignUpView: View {
                         do {
                             try await viewModel.signUp(email: email, password: password, passwordCheck: passwordCheck)
                             showSignInView = false
+                        } catch let error as SignInErrors {
+                            signUpError = true
+                            errorMessage = error.localizedDescription
                         } catch {
-                            print(error)
+                            signUpError = true
+                            errorMessage = error.localizedDescription
                         }
                     }
                     
@@ -52,6 +55,9 @@ struct EmailSignUpView: View {
                         .headingLabelStyle()
                 }
                 Spacer()
+                .alert(errorMessage, isPresented: $signUpError) {
+                    Button("Ok", role: .cancel) { }
+                }
             }
         }
     }

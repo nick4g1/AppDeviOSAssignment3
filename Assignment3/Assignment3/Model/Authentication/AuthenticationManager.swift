@@ -21,17 +21,17 @@ struct AuthDataResultModel {
     }
 }
 
-// Setting class as final as no inheritance will be used
+
 final class AuthenticationManager {
-    // Only 1 instance of this class will be created to be used across the app
+    
+    // Shared instance of class is declared to be used across application
     static let shared = AuthenticationManager()
     private init() { }
     
     // Try to retrieve the current user from local storage else throw an error
     func getAuthenticatedUser() throws -> AuthDataResultModel {
         guard let user = Auth.auth().currentUser else {
-            // TODO: Should throw custom error here
-            throw URLError(.badServerResponse)
+            throw ApplicationError.UserNotRetrieved
         }
         
         return AuthDataResultModel(user: user)
@@ -56,7 +56,7 @@ final class AuthenticationManager {
         return try await signInWithCredential(credential: credential)
     }
     
-    // Sign in with crdential function used with Google + Apple sign in
+    // Sign in with crdential function used with Google
     func signInWithCredential(credential: AuthCredential) async throws -> AuthDataResultModel {
         let authDataResult = try await Auth.auth().signIn(with: credential)
         return AuthDataResultModel(user: authDataResult.user)

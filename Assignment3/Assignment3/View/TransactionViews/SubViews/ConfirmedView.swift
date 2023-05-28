@@ -32,7 +32,7 @@ struct ConfirmedView: View {
 					Spacer()
 					
 					NavigationLink {
-						MainMenuView(showSignInView: .constant(false))
+						InitialView()
 					} label: {
 						Text("Main Menu")
 							.headingLabelStyle()

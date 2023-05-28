@@ -9,54 +9,81 @@ import SwiftUI
 import GoogleSignIn
 import GoogleSignInSwift
 
+
+// Main authentication view with options for sign in with google
+// and sign in with email
 struct AuthenticationView: View {
-    
+
+    // Declare bool for showSignInView that will be set to false once user has signed in
     @Binding var showSignInView: Bool
+    // Declare bool that is set to true if google sign in fails
+    @State private var googleSignInError = false
     @StateObject private var viewModel = AuthenticationViewModel()
+
     var body: some View {
-            ZStack {
-                ColorUtils.backgroundColor.edgesIgnoringSafeArea(.all)
-                VStack(spacing:35) {
-                    Spacer()
-                    Image("Logo")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 150)
-                        .shadow(radius: 20)
-                    Text("Split Mate")
-                        .font(.custom("System", size: 50))
-                        .foregroundColor(.black)
-                    Button{
-                        Task {
-                            do {
-                                try await viewModel.signInGoogle()
-                                showSignInView = false
-                            } catch {
-                                print(error)
-                            }
+        ZStack {
+            ColorUtils.backgroundColor.edgesIgnoringSafeArea(.all)
+            VStack(spacing: 35) {
+                Spacer()
+                Image("Logo")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 150)
+                    .shadow(radius: 20)
+                Text("Split Mate")
+                    .font(.custom("Quicksand-Regular", size: 65))
+                    .foregroundColor(ColorUtils.textColour)
+
+                // Google sign in button that calls async signInGoogle
+                // function from viewModel and sets showSignInView to false
+                // once completed, displays error message if not sucessful
+                Button {
+                    Task {
+                        do {
+                            try await viewModel.signInGoogle()
+                            showSignInView = false
+                        } catch {
+                            googleSignInError = true
                         }
-                    } label: {
-                        HStack {
-                            Image("GoogleLogo")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 20)// SF Symbols image
-                            Text("Sign In With Google")
-                                .font(.headline)
-                                .foregroundColor(ColorUtils.textColour)
-                        }
+                    }
+                } label: {
+                    HStack {
+                        Image("GoogleLogo")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 20)
+                        Text("Sign In With Google")
+                            .font(.headline)
+                            .foregroundColor(ColorUtils.textColour)
+                    }
                         .headingLabelStyle()
-  
-                    }
-                    NavigationLink {
-                        EmailSignInView(showSignInView: $showSignInView)
-                    } label: {
+
+                }
+
+                // Navigation link that displays email sign in view and passes
+                // the bound showSignInView bool
+                NavigationLink {
+                    EmailSignInView(showSignInView: $showSignInView)
+                } label: {
+                    HStack {
+                        Image(systemName: "envelope")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 20)
                         Text("Sign In With Email")
-                            .headingLabelStyle()
+                            .font(.headline)
+                            .foregroundColor(ColorUtils.textColour)
                     }
-                    Spacer()
+                        .headingLabelStyle()
+                }
+                Spacer()
+
+                // Alert that is displayed if google sign in fails
+                .alert("Could not sign in with Google", isPresented: $googleSignInError) {
+                    Button("Ok", role: .cancel) { }
                 }
             }
+        }
     }
 }
 

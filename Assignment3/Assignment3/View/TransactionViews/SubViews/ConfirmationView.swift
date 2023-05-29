@@ -7,12 +7,17 @@
 
 import SwiftUI
 
+// View to confirm or cancel the transaction
 struct ConfirmationView: View {
+
+    // Binding allow sending the amount from the previous view to this view and then to the confirmedView
     @Binding var amount: Double
+    //Transactions is the transaction object that is passed to the view which contains information about transaction
     @State var transactions: [UserTransaction]
-    @State private var translation: CGFloat = 0
+    //Variables for the case when the transaction is canceled and to go back to the view before
     @State private var isCancelled = false
     @Environment(\.dismiss) private var dismiss
+
     var body: some View {
         ZStack {
             ColorUtils.backgroundColor.edgesIgnoringSafeArea(.all)

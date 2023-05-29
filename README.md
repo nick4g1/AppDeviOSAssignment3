@@ -7,7 +7,7 @@ Split Mate is an app designed to make splitting costs between friends easy and e
 
 - Adrian Nikaeen (GAL1LAO)
 - Cooper Jacob 13239417 (JJRCyber)
-- Jake Isaacs (jakehisaacs)
+- Jake Isaacs 13249178 (jakehisaacs)
 - Max Fisher (maxhfisher)
 - Nick Forgione (nick4g1)
 

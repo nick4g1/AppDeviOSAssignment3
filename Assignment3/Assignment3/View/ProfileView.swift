@@ -110,6 +110,7 @@ struct ProfileView: View {
                 }
 
             }
+            .scrollContentBackground(.hidden)
             
             // Load the current user from the UserManager
             .task {

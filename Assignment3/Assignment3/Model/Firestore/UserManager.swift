@@ -112,7 +112,7 @@ final class UserManager {
         user.friends = friendArray
         try await UserManager.shared.updateProfile(user: user)
     }
-    
+
     // Retrieves a users friends and get associated name
     func getFriends() async throws -> [Friend] {
         let user = try await loadCurrentUserDocument()

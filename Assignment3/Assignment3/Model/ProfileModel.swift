@@ -7,12 +7,13 @@
 
 import Foundation
 
+// Model used across multiple views to retrieve UserProfile from Firestore
 final class ProfileModel: ObservableObject {
-    
+
     @Published var user: UserProfile? = nil
     @Published var name: String = ""
     @Published var friendToAdd = ""
-    
+
     @MainActor
     func loadUser() async throws {
         self.user = try await UserManager.shared.loadCurrentUserDocument()

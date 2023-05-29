@@ -77,12 +77,10 @@ struct RequestView: View {
         }
             .task {
             try? await viewModel.loadUser()
-            if let user = viewModel.user {
-                do {
-                    friends = try await UserManager.shared.getFriends()
-                } catch {
-                    print(error)
-                }
+            do {
+                friends = try await UserManager.shared.getFriends()
+            } catch {
+                print(error)
             }
         }
 

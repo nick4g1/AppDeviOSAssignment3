@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// Main menu view with buttons linking to other main screens
 struct MainMenuView: View {
     @Binding var showSignInView: Bool
     var body: some View {
@@ -39,7 +40,6 @@ struct MainMenuView: View {
                     .coloredLabelStyle(Color(red: 0.15, green: 0.36, blue: 0.49))
                 }
                 NavigationLink {
-                    // Link to request view
                     RequestView()
                 } label: {
                     HStack {
@@ -100,6 +100,7 @@ struct MainMenuView: View {
                     .coloredLabelStyle(Color(red: 0.56, green: 0.76, blue: 0.91))
                 }
                 Button {
+                    // Signs out the user
                     Task {
                         do {
                             try AuthenticationManager.shared.signOut()

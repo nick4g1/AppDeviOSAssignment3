@@ -26,6 +26,17 @@ struct SendMoneyView: View {
 			if let user = viewModel.user {
 				ColorUtils.backgroundColor.edgesIgnoringSafeArea(.all)
 				VStack(){
+                    HStack {
+                        Text("Send")
+                            .font(.custom("Quicksand-Regular", size: 45))
+                            .foregroundColor(.black)
+                        Image(systemName: "paperplane.circle")
+                            .resizable()
+                            .foregroundColor(.black)
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 35)
+                    }
+
 					//Title as navigation title
 					//Creates text field using CurrencyTextField and NumberFormatter initialized above
 					CurrencyTextField(numberFormatter: numberFormatter, value: $value)
@@ -56,7 +67,6 @@ struct SendMoneyView: View {
 					//Check to make sure value is properly created
 					Text(String(format: "Sending: $%.02f", value))
 				}
-				.navigationTitle("Send Money")
 			}
         }
         .task {

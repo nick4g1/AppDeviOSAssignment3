@@ -17,20 +17,17 @@ struct ConfirmedView: View {
 			if confirmed {
 				ColorUtils.backgroundColor.edgesIgnoringSafeArea(.all)
 				
-				VStack {
+                VStack(spacing: 20) {
 					Image(systemName: "checkmark.circle.fill")
 						.font(.system(size: 200))
-						.foregroundColor(.green)
-						.shadow(radius: 10)
-						.frame(maxHeight: UIScreen.main.bounds.height / 2)
+                        .foregroundColor(Color(red: 0, green: 0.9, blue: 0))
+                        .shadow(color: .white, radius: 10)
 					
-					Text("Your transaction of \(amount, format: .currency(code: "AUD")) has been excuted")
+					Text("Your transaction of \(amount, format: .currency(code: "AUD")) has been completed")
 						.font(.title2)
 						.fontWeight(.bold)
-						.foregroundColor(.white)
-						.multilineTextAlignment(.leading)
-					Spacer()
-					
+                        .foregroundColor(ColorUtils.textColour)
+						.multilineTextAlignment(.center)
 					NavigationLink {
 						InitialView()
 					} label: {

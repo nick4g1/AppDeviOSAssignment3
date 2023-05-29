@@ -24,6 +24,21 @@ struct HeadingLabelStyle: ViewModifier {
     }
 }
 
+struct ColoredLabelStyle: ViewModifier {
+    var color: Color
+    func body(content: Content) -> some View {
+        content
+            .font(.headline)
+            .foregroundColor(ColorUtils.textColour)
+            .frame(height: 55)
+            .frame(maxWidth: .infinity)
+            .background(color)
+            .cornerRadius(10)
+            .shadow(radius: 10)
+            .padding(.horizontal)
+    }
+}
+
 struct AlternateLabelStyle: ViewModifier {
     func body(content: Content) -> some View {
         content
@@ -108,6 +123,10 @@ struct NumberFieldStyle: ViewModifier {
 extension View {
     func headingLabelStyle() -> some View {
         self.modifier(HeadingLabelStyle())
+    }
+    
+    func coloredLabelStyle(_ color: Color) -> some View {
+        self.modifier(ColoredLabelStyle(color: color))
     }
     
     func alternatelabelStyle() -> some View {

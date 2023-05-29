@@ -7,11 +7,14 @@
 
 import SwiftUI
 
+// View for requesting an amount from multiple friends
 struct RequestView: View {
-    //@Binding private var passTotalAmount = 0.0
-    //@State private var selectedPage: Page = RequestView()
+
+    // Focus state to allow dismissing of keyboard when tapped elsewhere
     @FocusState private var amountIsFocused: Bool
+    // Variable for amount entered into textfield
     @State private var amount = 0.0
+    // Variable for selected friends
     @State private var selectedFriends: Set<String> = []
     @StateObject private var viewModel = ProfileModel()
     @State var friends: [Friend] = []

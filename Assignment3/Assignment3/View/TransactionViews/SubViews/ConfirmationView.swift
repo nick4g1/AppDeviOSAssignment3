@@ -17,7 +17,7 @@ struct ConfirmationView: View {
         ZStack {
             ColorUtils.backgroundColor.edgesIgnoringSafeArea(.all)
             VStack(spacing: 20) {
-                Text("Do you want to execute this transaction of $\(amount, format: .currency(code: "AUD"))?")
+                Text("Do you want to execute this transaction of \(amount, format: .currency(code: "AUD"))?")
                     .font(.title2)
                     .fontWeight(.bold)
                     .foregroundColor(ColorUtils.textColour)

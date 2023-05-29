@@ -51,46 +51,42 @@ struct TrackView: View {
                                     .foregroundColor(total < 0 ? .red : .green)
                             }
                         }
-                    }
-                }
-                    .scrollContentBackground(.hidden)
-                if let user = viewModel.user {
-                    VStack {
-                        Text("Transactions")
-                            .font(.custom("Quicksand-Regular", size: 25))
-                        Text("Sent and Recieved")
-                            .font(.custom("Quicksand-Regular", size: 15))
-                            .foregroundColor(.gray)
-                            .padding(.bottom, 7)
-                        VStack {
-                            PieChart()
-                                .data([user.sent, user.recieved])
-                                .chartStyle(ChartStyle(backgroundColor: .white,
-                                foregroundColor: [ColorGradient(.red, .orange),
-                                    ColorGradient(.yellow, .green),]))
-                            VStack(alignment: .leading) {
-                                HStack {
-                                    Circle()
-                                        .fill(ColorGradient(.red, .orange).linearGradient(from: .bottom, to: .top))
-                                        .frame(width: 24.0, height: 24.0)
-                                    Text("Sent \(user.sent, format: .currency(code: "AUD"))")
-                                }
-                                HStack {
-                                    Circle()
-                                        .fill(ColorGradient(.green, .yellow).linearGradient(from: .bottom, to: .top))
-                                        .frame(width: 24.0, height: 24.0)
-                                    Text("Recieved \(user.recieved, format: .currency(code: "AUD"))")
+                        Section {
+                            VStack {
+                                Text("Transactions")
+                                    .font(.custom("Quicksand-Regular", size: 25))
+                                Text("Sent and Recieved")
+                                    .font(.custom("Quicksand-Regular", size: 15))
+                                    .foregroundColor(.gray)
+                                    .padding(.bottom, 7)
+                                VStack {
+                                    PieChart()
+                                        .data([user.sent, user.recieved])
+                                        .chartStyle(ChartStyle(backgroundColor: .white,
+                                        foregroundColor: [ColorGradient(.red, .orange),
+                                            ColorGradient(.yellow, .green),]))
+                                    VStack(alignment: .leading) {
+                                        HStack {
+                                            Circle()
+                                                .fill(ColorGradient(.red, .orange).linearGradient(from: .bottom, to: .top))
+                                                .frame(width: 24.0, height: 24.0)
+                                            Text("Sent \(user.sent, format: .currency(code: "AUD"))")
+                                        }
+                                        HStack {
+                                            Circle()
+                                                .fill(ColorGradient(.green, .yellow).linearGradient(from: .bottom, to: .top))
+                                                .frame(width: 24.0, height: 24.0)
+                                            Text("Recieved \(user.recieved, format: .currency(code: "AUD"))")
+                                        }
+                                    }
                                 }
                             }
                         }
-                    }
-                        .padding(.all)
-                        .background(.white)
-                        .cornerRadius(10)
-                        .shadow(radius: 10)
-                        .padding(30)
+                            .frame(height: 350)
 
+                    }
                 }
+                    .scrollContentBackground(.hidden)
 
             }
         }

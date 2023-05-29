@@ -34,6 +34,8 @@
 		9BA63AFB2A0A184300CE3AA8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BA63AFA2A0A184300CE3AA8 /* Preview Assets.xcassets */; };
 		9BA63B032A0A35A600CE3AA8 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 9BA63B022A0A35A600CE3AA8 /* GoogleSignIn */; };
 		9BA63B052A0A35A600CE3AA8 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 9BA63B042A0A35A600CE3AA8 /* GoogleSignInSwift */; };
+		9BA6700E2A247C5200F8834B /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 9BA6700D2A247C5200F8834B /* SwiftUICharts */; };
+		9BA670102A247D4B00F8834B /* ChartTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA6700F2A247D4B00F8834B /* ChartTest.swift */; };
 		9BAF45182A0FACB4005C864B /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 9BAF45172A0FACB4005C864B /* FirebaseFirestore */; };
 		9BAF451A2A0FACB4005C864B /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 9BAF45192A0FACB4005C864B /* FirebaseFirestoreSwift */; };
 		9BAF45212A0FAF9F005C864B /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAF45202A0FAF9F005C864B /* ProfileModel.swift */; };
@@ -73,6 +75,7 @@
 		9BA63AF32A0A184200CE3AA8 /* Assignment3App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assignment3App.swift; sourceTree = "<group>"; };
 		9BA63AF72A0A184300CE3AA8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9BA63AFA2A0A184300CE3AA8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		9BA6700F2A247D4B00F8834B /* ChartTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartTest.swift; sourceTree = "<group>"; };
 		9BAF45202A0FAF9F005C864B /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
 		9BC24CD42A0F2C1800DC61F3 /* SplitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitView.swift; sourceTree = "<group>"; };
 		9BC24CD62A0F37E300DC61F3 /* FriendModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendModel.swift; sourceTree = "<group>"; };
@@ -95,6 +98,7 @@
 				9BA63B032A0A35A600CE3AA8 /* GoogleSignIn in Frameworks */,
 				9BA63B052A0A35A600CE3AA8 /* GoogleSignInSwift in Frameworks */,
 				9B52718C2A0D09C500043141 /* FirebaseAnalytics in Frameworks */,
+				9BA6700E2A247C5200F8834B /* SwiftUICharts in Frameworks */,
 				9BAF45182A0FACB4005C864B /* FirebaseFirestore in Frameworks */,
 				9BAF451A2A0FACB4005C864B /* FirebaseFirestoreSwift in Frameworks */,
 			);
@@ -161,6 +165,7 @@
 				9BAF451B2A0FAD37005C864B /* Core */,
 				9B5271AC2A0E080B00043141 /* Authentication */,
 				9BD272E52A235AD1005A0E42 /* ProfileView.swift */,
+				9BA6700F2A247D4B00F8834B /* ChartTest.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -279,6 +284,7 @@
 				9B5271902A0DC8D700043141 /* FirebaseAuth */,
 				9BAF45172A0FACB4005C864B /* FirebaseFirestore */,
 				9BAF45192A0FACB4005C864B /* FirebaseFirestoreSwift */,
+				9BA6700D2A247C5200F8834B /* SwiftUICharts */,
 			);
 			productName = Assignment3;
 			productReference = 9BA63AF02A0A184200CE3AA8 /* Split Mate.app */;
@@ -313,6 +319,7 @@
 				9B52718A2A0D09C500043141 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				9BCA9ACA2A0E5F4B004A9252 /* XCRemoteSwiftPackageReference "shiny" */,
 				9BC24CD82A0F38B300DC61F3 /* XCRemoteSwiftPackageReference "Fakery" */,
+				9BA6700C2A247C5200F8834B /* XCRemoteSwiftPackageReference "ChartView" */,
 			);
 			productRefGroup = 9BA63AF12A0A184200CE3AA8 /* Products */;
 			projectDirPath = "";
@@ -355,6 +362,7 @@
 				9B843C212A1753B70002CDBE /* UserManager.swift in Sources */,
 				9B4C80C02A0E18FC00CE81BA /* ViewUtils.swift in Sources */,
 				9B52719D2A0DCE5C00043141 /* ViewModifierUtils.swift in Sources */,
+				9BA670102A247D4B00F8834B /* ChartTest.swift in Sources */,
 				09A619162A18C3E6002ACE3B /* TrackView.swift in Sources */,
 				9BD272DF2A1E154A005A0E42 /* TransactionManager.swift in Sources */,
 				9B4C80BE2A0E174000CE81BA /* GoogleSignInHelper.swift in Sources */,
@@ -596,6 +604,14 @@
 				minimumVersion = 7.0.0;
 			};
 		};
+		9BA6700C2A247C5200F8834B /* XCRemoteSwiftPackageReference "ChartView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AppPear/ChartView";
+			requirement = {
+				kind = exactVersion;
+				version = "2.0.0-beta.2";
+			};
+		};
 		9BC24CD82A0F38B300DC61F3 /* XCRemoteSwiftPackageReference "Fakery" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/vadymmarkov/Fakery.git";
@@ -639,6 +655,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 9BA63B012A0A35A500CE3AA8 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
 			productName = GoogleSignInSwift;
+		};
+		9BA6700D2A247C5200F8834B /* SwiftUICharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9BA6700C2A247C5200F8834B /* XCRemoteSwiftPackageReference "ChartView" */;
+			productName = SwiftUICharts;
 		};
 		9BAF45172A0FACB4005C864B /* FirebaseFirestore */ = {
 			isa = XCSwiftPackageProductDependency;

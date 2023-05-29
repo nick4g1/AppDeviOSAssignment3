@@ -27,7 +27,7 @@ final class GoogleSignInHelper {
 
         // Get the top VC (Firebase does not have full SwiftUI support yet)
         guard let topVC = ViewUtils.shared.topViewController() else {
-            throw URLError(.cannotFindHost)
+            throw ApplicationError.cannotGetTopView
         }
 
         // Get the sign in result object from opened dialog
@@ -36,7 +36,7 @@ final class GoogleSignInHelper {
         // Set idToken from signinresult
         guard let idToken = gidSignInResult.user.idToken?.tokenString else {
             // FIXME: Should throw custom error
-            throw URLError(.badServerResponse)
+            throw SignInErrors.googleSignInError("Cannot retrieve sign in token")
         }
 
         // Set variables for access tokens and name + email

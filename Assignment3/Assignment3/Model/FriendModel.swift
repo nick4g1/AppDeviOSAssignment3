@@ -7,10 +7,12 @@
 
 import Foundation
 
+// Basic struct to pull required details from UserProfiles
+
 struct Friend {
     let name: String
     let email: String
-    
+
     init(name: String, email: String) {
         if name == "" {
             self.name = email

@@ -31,7 +31,7 @@ final class AuthenticationManager {
     // Try to retrieve the current user from local storage else throw an error
     func getAuthenticatedUser() throws -> AuthDataResultModel {
         guard let user = Auth.auth().currentUser else {
-            throw ApplicationError.UserNotRetrieved
+            throw ApplicationError.userNotRetrieved
         }
 
         return AuthDataResultModel(user: user)
@@ -76,7 +76,7 @@ final class AuthenticationManager {
         return AuthDataResultModel(user: authDataResult.user)
     }
 
-    // TODO: Function to reset password NOT IMPLEMENTED
+    // Function to reset password NOT IMPLEMENTED
     func resetPassword(email: String) async throws {
         try await Auth.auth().sendPasswordReset(withEmail: email)
     }

@@ -5,15 +5,19 @@ struct SplitView: View {
 
     // Focus state to allow dismissing of keyboard when tapped elsewhere
     @FocusState private var amountIsFocused: Bool
+
     // Variable for amount entered into textfield
     @State private var amount = 0.0
-    // Variable for selected friends
+
+    // Variable for selected friends and array of all friends on profile
     @State private var selectedFriends: Set<String> = []
     @StateObject private var viewModel = ProfileModel()
     @State var friends: [Friend] = []
 
     var body: some View {
         ZStack {
+
+            // If user is loaded then load view
             if let user = viewModel.user {
                 ColorUtils.backgroundColor.edgesIgnoringSafeArea(.all)
                 VStack(spacing: 20) {
@@ -43,6 +47,8 @@ struct SplitView: View {
                     }
                     Section {
                         NavigationLink {
+
+                            // Pass an array of UserTransaction to the confirmation view
                             var transactions: [UserTransaction] {
                                 var result: [UserTransaction] = []
                                 for friend in selectedFriends {
@@ -68,13 +74,13 @@ struct SplitView: View {
             }
         }
             .task {
+
+            // Load the user and friends list after the view has loaded
             try? await viewModel.loadUser()
-            if let user = viewModel.user {
-                do {
-                    friends = try await UserManager.shared.getFriends()
-                } catch {
-                    print(error)
-                }
+            do {
+                friends = try await UserManager.shared.getFriends()
+            } catch {
+                print(error)
             }
         }
     }

@@ -8,15 +8,17 @@
 import Foundation
 
 
-// Custom error if user cannot be retrieved from local storage
+// Custom application errors
 enum ApplicationError: Error {
-    case UserNotRetrieved
+    case userNotRetrieved
+    case cannotGetTopView
 }
 
-// Custom errors for input validation
+// Custom errors for sign in and sign up functions
 enum SignInErrors: LocalizedError {
     case fieldsNotComplete(String)
     case passwordsDontMatch(String)
+    case googleSignInError(String)
 
     var errorDescription: String? {
         switch self {
@@ -24,6 +26,9 @@ enum SignInErrors: LocalizedError {
             return message
         case .passwordsDontMatch(let message):
             return message
+        case .googleSignInError(let message):
+            return message
         }
+
     }
 }

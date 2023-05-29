@@ -35,6 +35,9 @@ To run the project locally, follow these steps:
 4. Login as the demo account to explore all features
     **Email:** demo@splitmate.com
     **Password:** splitmate
+    
+## GitHub Repository Link
+https://github.com/nick4g1/AppDeviOSAssignment3
 
 ## Contributions
 

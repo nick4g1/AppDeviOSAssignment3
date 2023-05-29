@@ -36,7 +36,7 @@ struct MainMenuView: View {
                             .frame(width: 25)
 
                     }
-                    .coloredLabelStyle(.orange)
+                    .coloredLabelStyle(Color(red: 0.15, green: 0.36, blue: 0.49))
                 }
                 NavigationLink {
                     // Link to request view
@@ -52,7 +52,7 @@ struct MainMenuView: View {
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 25)
                     }
-                    .coloredLabelStyle(.red)
+                    .coloredLabelStyle(Color(red: 0.08, green: 0.4, blue: 0.52))
                 }
                 NavigationLink {
                     SendMoneyView()
@@ -67,7 +67,7 @@ struct MainMenuView: View {
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 25)
                     }
-                    .coloredLabelStyle(.blue)
+                    .coloredLabelStyle(Color(red: 0, green: 0.46, blue: 0.60))
                 }
                 NavigationLink {
                     TrackView()
@@ -82,7 +82,7 @@ struct MainMenuView: View {
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 20)
                     }
-                    .coloredLabelStyle(.green)
+                    .coloredLabelStyle(Color(red: 0.35, green: 0.6, blue: 0.75))
                 }
                 NavigationLink {
                     ProfileView()
@@ -97,7 +97,7 @@ struct MainMenuView: View {
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 25)
                     }
-                    .coloredLabelStyle(.yellow)
+                    .coloredLabelStyle(Color(red: 0.56, green: 0.76, blue: 0.91))
                 }
                 Button {
                     Task {

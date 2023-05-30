@@ -10,7 +10,6 @@ import SwiftUICharts
 
 struct TrackView: View {
 
-    //TODO: Keep track of transfers
     @StateObject private var viewModel = ProfileModel()
 
     var body: some View {
@@ -27,6 +26,8 @@ struct TrackView: View {
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 35)
                 }
+                
+                // Display list with users transaction and net balance
                 List {
                     if let user = viewModel.user {
                         Section {
@@ -51,6 +52,8 @@ struct TrackView: View {
                                     .foregroundColor(total < 0 ? .red : .green)
                             }
                         }
+                        
+                        // Display a pie chart from SwiftUICharts library with the values for sent and recieved
                         Section {
                             VStack {
                                 Text("Transactions")
@@ -66,6 +69,8 @@ struct TrackView: View {
                                         foregroundColor: [ColorGradient(.red, .orange),
                                             ColorGradient(.yellow, .green),]))
                                     VStack(alignment: .leading) {
+                                        
+                                        // Display legend for pie chart
                                         HStack {
                                             Circle()
                                                 .fill(ColorGradient(.red, .orange).linearGradient(from: .bottom, to: .top))

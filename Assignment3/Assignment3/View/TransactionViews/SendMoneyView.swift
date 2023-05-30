@@ -8,11 +8,15 @@
 import SwiftUI
 
 struct SendMoneyView: View {
+
+    // Variable for amount entered into textfield
     @State private var amount = 0.0
 
+    // Focus state to allow dismissing of keyboard when done is pressed
     @FocusState private var amountIsFocused: Bool
+
+    // Variable for selected friends and array of all friends on profile
     @StateObject private var viewModel = ProfileModel()
-    //Friends
     @State private var selectedFriends: Set<String> = []
     @State var friends: [Friend] = []
 
@@ -61,6 +65,13 @@ struct SendMoneyView: View {
                         Text("Send")
                             .sendReceiveStyle()
                     }
+                }
+            }
+        }
+            .toolbar {
+            ToolbarItemGroup(placement: .keyboard) {
+                Button("Done") {
+                    amountIsFocused = false
                 }
             }
         }

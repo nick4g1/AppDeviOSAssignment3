@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SendMoneyView: View {
-    @State private var amount = 0.0
+    @State private var value = 0.0
     private var numberFormatter: NumberFormatter
     @StateObject private var viewModel = ProfileModel()
     //Friends
@@ -19,7 +19,6 @@ struct SendMoneyView: View {
         self.numberFormatter = numberFormatter
         self.numberFormatter.numberStyle = .currency
         self.numberFormatter.maximumFractionDigits = 2
-        self.numberFormatter.locale = Locale.current
     }
 
     var body: some View {
@@ -40,32 +39,33 @@ struct SendMoneyView: View {
 
                     //Title as navigation title
                     //Creates text field using CurrencyTextField and NumberFormatter initialized above
-                    CurrencyTextField(numberFormatter: numberFormatter, value: $amount)
+                    CurrencyTextField(numberFormatter: numberFormatter, value: $value)
                         .padding(20)
                         .overlay(RoundedRectangle(cornerRadius: 16)
                             .stroke(Color.gray.opacity(0.3), lineWidth: 2))
-                        .frame(width: 400, height: 100)
+                        .frame(height: 100)
                     Spacer()
-                    Text("From Who?")
-                        .font(.title)
+                    Text("Friend List").frame(maxWidth: .infinity, alignment: .leading).font(.system(size: 30)).padding(.all)
                     // Here comes the scrollstack
-                    FriendsScrollView(amount: $amount, selectedFriends: $selectedFriends, friends: friends, toSplit: false)
+                    FriendsScrollView(amount: $value, selectedFriends: $selectedFriends, friends: friends, toSplit: false)
                     Spacer()
                     //Link to confirmation view
                     NavigationLink {
                         var transactions: [UserTransaction] {
                             var result: [UserTransaction] = []
                             for friend in selectedFriends {
-                                let transaction = UserTransaction(transactionId: "\(friend)\(Date())", amount: amount / Double(selectedFriends.count), sendingAccount: user.email, recievingAccount: friend, date: Date())
+                                let transaction = UserTransaction(transactionId: "\(friend)\(Date())", amount: value / Double(selectedFriends.count), sendingAccount: user.email, recievingAccount: friend, date: Date())
                                 result.append(transaction)
                             }
                             return result
                         }
-                        ConfirmationView(amount: $amount, transactions: transactions)
+                        ConfirmationView(amount: $value, transactions: transactions)
                     } label: {
                         Text("Send")
                             .sendReceiveStyle()
                     }
+                    //Check to make sure value is properly created
+                    Text(String(format: "Sending: $%.02f", value))
                 }
             }
         }

@@ -13,18 +13,7 @@ struct SplitView: View {
     @State private var selectedFriends: Set<String> = []
     @StateObject private var viewModel = ProfileModel()
     @State var friends: [Friend] = []
-    
-    // Number formatter for initialization
-    private var numberFormatter: NumberFormatter
-    
-    //Initialize number formatter for CurrencyTextField
-    init(numberFormatter: NumberFormatter = NumberFormatter()) {
-        self.numberFormatter = numberFormatter
-        self.numberFormatter.numberStyle = .currency
-        self.numberFormatter.maximumFractionDigits = 2
-        self.numberFormatter.locale = Locale.current
-    }
-    
+
     var body: some View {
         ZStack {
 
@@ -43,13 +32,14 @@ struct SplitView: View {
                             .frame(width: 35)
 
                     }
-                    //Creates text field using CurrencyTextField and NumberFormatter initialized above
-                    CurrencyTextField(numberFormatter: numberFormatter, value: $amount)
-                        .padding(20)
-                        .overlay(RoundedRectangle(cornerRadius: 16)
-                            .stroke(Color.gray.opacity(0.3), lineWidth: 2))
-                        .frame(width: 400, height: 100)
-                    Spacer()
+                    HStack {
+                        Text("Amount:")
+                            .font(.title)
+                        TextField("Amount", value: $amount, format: .currency(code: "AUD"))
+                            .numberFieldStyle()
+                            .focused($amountIsFocused)
+                    }
+                        .alternatelabelStyle()
                     Text("With Who?")
                         .font(.title)
                     Section {

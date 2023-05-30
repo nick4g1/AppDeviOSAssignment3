@@ -9,18 +9,13 @@ import SwiftUI
 
 struct SendMoneyView: View {
     @State private var amount = 0.0
-    private var numberFormatter: NumberFormatter
+
+    @FocusState private var amountIsFocused: Bool
     @StateObject private var viewModel = ProfileModel()
     //Friends
     @State private var selectedFriends: Set<String> = []
     @State var friends: [Friend] = []
-    //Initialize number formatter for CurrencyTextField
-    init(numberFormatter: NumberFormatter = NumberFormatter()) {
-        self.numberFormatter = numberFormatter
-        self.numberFormatter.numberStyle = .currency
-        self.numberFormatter.maximumFractionDigits = 2
-        self.numberFormatter.locale = Locale.current
-    }
+
 
     var body: some View {
         ZStack {
@@ -37,14 +32,14 @@ struct SendMoneyView: View {
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 35)
                     }
-
-                    //Title as navigation title
-                    //Creates text field using CurrencyTextField and NumberFormatter initialized above
-                    CurrencyTextField(numberFormatter: numberFormatter, value: $amount)
-                        .padding(20)
-                        .overlay(RoundedRectangle(cornerRadius: 16)
-                            .stroke(Color.gray.opacity(0.3), lineWidth: 2))
-                        .frame(width: 400, height: 100)
+                    HStack {
+                        Text("Amount:")
+                            .font(.title)
+                        TextField("Amount", value: $amount, format: .currency(code: "AUD"))
+                            .numberFieldStyle()
+                            .focused($amountIsFocused)
+                    }
+                        .alternatelabelStyle()
                     Spacer()
                     Text("From Who?")
                         .font(.title)

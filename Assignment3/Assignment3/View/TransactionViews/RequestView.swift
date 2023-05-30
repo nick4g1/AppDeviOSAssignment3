@@ -94,9 +94,3 @@ struct RequestView_Previews: PreviewProvider {
         }
     }
 }
-    static var previews: some View {
-        NavigationStack {
-            RequestView()
-        }
-    }
-}

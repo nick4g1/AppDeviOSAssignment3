@@ -1,3 +1,10 @@
+//
+//  SplitView.swift
+//  Assignment3
+//
+//  Created by Cooper Jacob on 13/5/2023.
+//
+
 import SwiftUI
 
 // View for splitting an amount with multiple friends
@@ -84,16 +91,6 @@ struct SplitView: View {
             }
         }
     }
-}
-
-struct SplitView_Previews: PreviewProvider {
-    static var previews: some View {
-        NavigationStack {
-            SplitView()
-        }
-
-    }
-}
 }
 
 struct SplitView_Previews: PreviewProvider {

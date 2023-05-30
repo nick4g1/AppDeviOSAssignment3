@@ -106,11 +106,15 @@ final class UserManager {
 
     // Adds another users email to friend array of signed in profile
     func addFriend(friendEmail: String) async throws {
-        var user = try await UserManager.shared.loadCurrentUserDocument()
-        var friendArray = user.friends
-        friendArray.append(friendEmail)
-        user.friends = friendArray
-        try await UserManager.shared.updateProfile(user: user)
+        if let friendDocument = try? await getUser(email: friendEmail) {
+            var user = try await UserManager.shared.loadCurrentUserDocument()
+            var friendArray = user.friends
+            friendArray.append(friendEmail)
+            user.friends = friendArray
+            try await UserManager.shared.updateProfile(user: user)
+        } else {
+            throw ApplicationError.userNotRetrieved
+        }
     }
 
     // Retrieves a users friends and get associated name

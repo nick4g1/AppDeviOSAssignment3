@@ -14,6 +14,7 @@ struct ProfileView: View {
 
     // Bool for collapsible section for friends
     @State private var isExpanded = false
+    @State private var addFriendError = false
 
     var body: some View {
         ZStack {
@@ -96,8 +97,14 @@ struct ProfileView: View {
                             Button("Add Friend") {
                                 Task {
                                     if !viewModel.friendToAdd.isEmpty {
-                                        try? await UserManager.shared.addFriend(friendEmail: viewModel.friendToAdd)
-                                        try? await viewModel.loadUser()
+                                        do {
+                                            // Catch error if user does not exist
+                                            try await UserManager.shared.addFriend(friendEmail: viewModel.friendToAdd)
+                                            try? await viewModel.loadUser()
+                                        } catch {
+                                            addFriendError = true
+                                        }
+
                                     }
                                 }
                             }
@@ -107,6 +114,9 @@ struct ProfileView: View {
                                 .font(.title2)
                                 .bold()
                         }
+                    }
+                    .alert("User does not exist", isPresented: $addFriendError) {
+                        Button("Ok", role: .cancel) { }
                     }
                 }
 

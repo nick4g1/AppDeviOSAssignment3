@@ -44,9 +44,6 @@
 		9BD272DF2A1E154A005A0E42 /* TransactionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD272DE2A1E154A005A0E42 /* TransactionManager.swift */; };
 		9BD272E62A235AD1005A0E42 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD272E52A235AD1005A0E42 /* ProfileView.swift */; };
 		C612616F2A0F2C1D00E083EA /* SendMoneyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C612616E2A0F2C1D00E083EA /* SendMoneyView.swift */; };
-		C61261712A0F457E00E083EA /* SendMoneyNumberPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61261702A0F457E00E083EA /* SendMoneyNumberPad.swift */; };
-		C692258F2A19FB0900644D70 /* CurrencyUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C692258E2A19FB0900644D70 /* CurrencyUITextField.swift */; };
-		C69225912A19FB5400644D70 /* CurrencyTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69225902A19FB5400644D70 /* CurrencyTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,9 +78,6 @@
 		9BD272DE2A1E154A005A0E42 /* TransactionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionManager.swift; sourceTree = "<group>"; };
 		9BD272E52A235AD1005A0E42 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		C612616E2A0F2C1D00E083EA /* SendMoneyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMoneyView.swift; sourceTree = "<group>"; };
-		C61261702A0F457E00E083EA /* SendMoneyNumberPad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMoneyNumberPad.swift; sourceTree = "<group>"; };
-		C692258E2A19FB0900644D70 /* CurrencyUITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyUITextField.swift; sourceTree = "<group>"; };
-		C69225902A19FB5400644D70 /* CurrencyTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,7 +123,6 @@
 			isa = PBXGroup;
 			children = (
 				9BC24CDB2A0F499700DC61F3 /* FriendScrollView.swift */,
-				C61261702A0F457E00E083EA /* SendMoneyNumberPad.swift */,
 				3AED06242A0F3A9700FAF7DA /* ConfirmationView.swift */,
 				3AED06262A0F52A500FAF7DA /* ConfirmedView.swift */,
 			);
@@ -150,8 +143,6 @@
 				9B52719A2A0DCC7100043141 /* ColorUtils.swift */,
 				9B52719C2A0DCE5C00043141 /* ViewModifierUtils.swift */,
 				9B4C80BF2A0E18FC00CE81BA /* ViewUtils.swift */,
-				C692258E2A19FB0900644D70 /* CurrencyUITextField.swift */,
-				C69225902A19FB5400644D70 /* CurrencyTextField.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -162,7 +153,6 @@
 				9B2F9D932A23080D00C7B903 /* TransactionViews */,
 				9BAF451B2A0FAD37005C864B /* Core */,
 				9B5271AC2A0E080B00043141 /* Authentication */,
-				9BD272E52A235AD1005A0E42 /* ProfileView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -170,10 +160,9 @@
 		9B5271A52A0DDF5C00043141 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				9B9BA0F22A258C9B00D9A855 /* Local */,
 				9B843C1F2A1753860002CDBE /* Firestore */,
 				9BAF451D2A0FAD68005C864B /* Authentication */,
-				9BC24CD62A0F37E300DC61F3 /* FriendModel.swift */,
-				9BAF45202A0FAF9F005C864B /* ProfileModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -195,6 +184,15 @@
 				9BD272DE2A1E154A005A0E42 /* TransactionManager.swift */,
 			);
 			path = Firestore;
+			sourceTree = "<group>";
+		};
+		9B9BA0F22A258C9B00D9A855 /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				9BC24CD62A0F37E300DC61F3 /* FriendModel.swift */,
+				9BAF45202A0FAF9F005C864B /* ProfileModel.swift */,
+			);
+			path = Local;
 			sourceTree = "<group>";
 		};
 		9BA63AE72A0A184200CE3AA8 = {
@@ -241,6 +239,7 @@
 		9BAF451B2A0FAD37005C864B /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				9BD272E52A235AD1005A0E42 /* ProfileView.swift */,
 				9B5271A02A0DDB5500043141 /* InitialView.swift */,
 				9B5271A32A0DDE2F00043141 /* MainMenuView.swift */,
 			);
@@ -354,7 +353,6 @@
 				9B2F9D922A2303EE00C7B903 /* ApplicationError.swift in Sources */,
 				C612616F2A0F2C1D00E083EA /* SendMoneyView.swift in Sources */,
 				9BC24CD72A0F37E300DC61F3 /* FriendModel.swift in Sources */,
-				C69225912A19FB5400644D70 /* CurrencyTextField.swift in Sources */,
 				9B5271A12A0DDB5500043141 /* InitialView.swift in Sources */,
 				9B843C212A1753B70002CDBE /* UserManager.swift in Sources */,
 				9B4C80C02A0E18FC00CE81BA /* ViewUtils.swift in Sources */,
@@ -366,8 +364,6 @@
 				9BC24CD52A0F2C1800DC61F3 /* SplitView.swift in Sources */,
 				9B52719B2A0DCC7100043141 /* ColorUtils.swift in Sources */,
 				9BA63AF42A0A184200CE3AA8 /* Assignment3App.swift in Sources */,
-				C61261712A0F457E00E083EA /* SendMoneyNumberPad.swift in Sources */,
-				C692258F2A19FB0900644D70 /* CurrencyUITextField.swift in Sources */,
 				3AED06252A0F3A9700FAF7DA /* ConfirmationView.swift in Sources */,
 				9B5271962A0DC97A00043141 /* AuthenticationView.swift in Sources */,
 				9BC24CDC2A0F499700DC61F3 /* FriendScrollView.swift in Sources */,

@@ -53,6 +53,7 @@ struct ConfirmedView: View {
                 confirmed = false
             }
         }
+            .navigationBarBackButtonHidden(true)
     }
 }
 

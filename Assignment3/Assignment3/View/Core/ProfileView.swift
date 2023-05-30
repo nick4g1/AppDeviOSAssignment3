@@ -90,6 +90,7 @@ struct ProfileView: View {
                             // text field to add new friend
                             TextField("Add Friend:", text: $viewModel.friendToAdd)
                                 .autocapitalization(.none)
+                                .disableAutocorrection(true)
                             
                             // If text field is not empty add a new friend to the friend array
                             Button("Add Friend") {

@@ -29,6 +29,7 @@
 		9B5271A92A0E015D00043141 /* EmailAuthenticationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5271A82A0E015D00043141 /* EmailAuthenticationHandler.swift */; };
 		9B5271AB2A0E05B900043141 /* EmailSignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5271AA2A0E05B900043141 /* EmailSignUpView.swift */; };
 		9B843C212A1753B70002CDBE /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B843C202A1753B70002CDBE /* UserManager.swift */; };
+		9B9BA0F12A258B8F00D9A855 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 9B9BA0F02A258B8F00D9A855 /* SwiftUICharts */; };
 		9BA63AF42A0A184200CE3AA8 /* Assignment3App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA63AF32A0A184200CE3AA8 /* Assignment3App.swift */; };
 		9BA63AF82A0A184300CE3AA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BA63AF72A0A184300CE3AA8 /* Assets.xcassets */; };
 		9BA63AFB2A0A184300CE3AA8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BA63AFA2A0A184300CE3AA8 /* Preview Assets.xcassets */; };
@@ -95,6 +96,7 @@
 				9BA63B032A0A35A600CE3AA8 /* GoogleSignIn in Frameworks */,
 				9BA63B052A0A35A600CE3AA8 /* GoogleSignInSwift in Frameworks */,
 				9B52718C2A0D09C500043141 /* FirebaseAnalytics in Frameworks */,
+				9B9BA0F12A258B8F00D9A855 /* SwiftUICharts in Frameworks */,
 				9BAF45182A0FACB4005C864B /* FirebaseFirestore in Frameworks */,
 				9BAF451A2A0FACB4005C864B /* FirebaseFirestoreSwift in Frameworks */,
 			);
@@ -279,6 +281,7 @@
 				9B5271902A0DC8D700043141 /* FirebaseAuth */,
 				9BAF45172A0FACB4005C864B /* FirebaseFirestore */,
 				9BAF45192A0FACB4005C864B /* FirebaseFirestoreSwift */,
+				9B9BA0F02A258B8F00D9A855 /* SwiftUICharts */,
 			);
 			productName = Assignment3;
 			productReference = 9BA63AF02A0A184200CE3AA8 /* Split Mate.app */;
@@ -313,6 +316,7 @@
 				9B52718A2A0D09C500043141 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				9BCA9ACA2A0E5F4B004A9252 /* XCRemoteSwiftPackageReference "shiny" */,
 				9BC24CD82A0F38B300DC61F3 /* XCRemoteSwiftPackageReference "Fakery" */,
+				9B9BA0EF2A258B8F00D9A855 /* XCRemoteSwiftPackageReference "ChartView" */,
 			);
 			productRefGroup = 9BA63AF12A0A184200CE3AA8 /* Products */;
 			projectDirPath = "";
@@ -588,6 +592,14 @@
 				minimumVersion = 10.0.0;
 			};
 		};
+		9B9BA0EF2A258B8F00D9A855 /* XCRemoteSwiftPackageReference "ChartView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AppPear/ChartView";
+			requirement = {
+				kind = exactVersion;
+				version = "2.0.0-beta.2";
+			};
+		};
 		9BA63B012A0A35A500CE3AA8 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
@@ -629,6 +641,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 9B52718A2A0D09C500043141 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAuth;
+		};
+		9B9BA0F02A258B8F00D9A855 /* SwiftUICharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9B9BA0EF2A258B8F00D9A855 /* XCRemoteSwiftPackageReference "ChartView" */;
+			productName = SwiftUICharts;
 		};
 		9BA63B022A0A35A600CE3AA8 /* GoogleSignIn */ = {
 			isa = XCSwiftPackageProductDependency;

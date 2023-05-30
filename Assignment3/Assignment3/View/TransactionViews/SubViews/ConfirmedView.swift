@@ -11,7 +11,7 @@ import SwiftUI
 struct ConfirmedView: View {
 
     //Binding allow sending the amount to this view
-    @Binding var amount: Double
+    var amount: Double
     //Transactions is the transaction object that is passed to the view which contains information about transaction
     @State var transactions: [UserTransaction]
     //The variable is set to true when firebase successfully loads the transaction
@@ -58,6 +58,6 @@ struct ConfirmedView: View {
 
 struct ConfirmedView_Previews: PreviewProvider {
     static var previews: some View {
-        ConfirmedView(amount: .constant(0.0), transactions: [])
+        ConfirmedView(amount: 100.0, transactions: [])
     }
 }

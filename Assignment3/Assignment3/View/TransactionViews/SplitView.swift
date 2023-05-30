@@ -64,7 +64,7 @@ struct SplitView: View {
                                 }
                                 return result
                             }
-                            ConfirmationView(amount: $amount, transactions: transactions)
+                            ConfirmationView(amount: amount, transactions: transactions)
                         } label: {
                             Text("Split")
                                 .sendReceiveStyle()

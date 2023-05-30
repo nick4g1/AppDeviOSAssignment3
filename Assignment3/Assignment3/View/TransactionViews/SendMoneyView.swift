@@ -55,12 +55,12 @@ struct SendMoneyView: View {
                         var transactions: [UserTransaction] {
                             var result: [UserTransaction] = []
                             for friend in selectedFriends {
-                                let transaction = UserTransaction(transactionId: "\(friend)\(Date())", amount: amount / Double(selectedFriends.count), sendingAccount: user.email, recievingAccount: friend, date: Date())
+                                let transaction = UserTransaction(transactionId: "\(friend)\(Date())", amount: amount, sendingAccount: user.email, recievingAccount: friend, date: Date())
                                 result.append(transaction)
                             }
                             return result
                         }
-                        ConfirmationView(amount: $amount, transactions: transactions)
+                        ConfirmationView(amount: (amount * Double(selectedFriends.count)), transactions: transactions)
                     } label: {
                         Text("Send")
                             .sendReceiveStyle()

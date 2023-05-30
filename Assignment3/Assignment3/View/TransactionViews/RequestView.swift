@@ -53,12 +53,12 @@ struct RequestView: View {
                             var result: [UserTransaction] = []
                             for friend in selectedFriends {
 
-                                let transaction = UserTransaction(transactionId: "\(friend)\(Date())", amount: amount / Double(selectedFriends.count), sendingAccount: friend, recievingAccount: user.email, date: Date())
+                                let transaction = UserTransaction(transactionId: "\(friend)\(Date())", amount: amount, sendingAccount: friend, recievingAccount: user.email, date: Date())
                                 result.append(transaction)
                             }
                             return result
                         }
-                        ConfirmationView(amount: $amount, transactions: transactions)
+                        ConfirmationView(amount: (amount * Double(selectedFriends.count)), transactions: transactions)
                     } label: {
                         Text("Request")
                             .sendReceiveStyle()

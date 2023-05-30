@@ -11,7 +11,7 @@ import SwiftUI
 struct ConfirmationView: View {
 
     // Binding allow sending the amount from the previous view to this view and then to the confirmedView
-    @Binding var amount: Double
+    var amount: Double
     //Transactions is the transaction object that is passed to the view which contains information about transaction
     @State var transactions: [UserTransaction]
     //Variables for the case when the transaction is canceled and to go back to the view before
@@ -31,7 +31,7 @@ struct ConfirmationView: View {
 
                 NavigationLink (
                     // Link to Confirmed view
-                    destination: ConfirmedView(amount: $amount, transactions: transactions),
+                    destination: ConfirmedView(amount: amount, transactions: transactions),
                     label: {
                         Text("Confirm")
                             .confirmLabelStyle()
@@ -51,7 +51,7 @@ struct ConfirmationView: View {
 
 struct ConfirmationView_Previews: PreviewProvider {
     static var previews: some View {
-        ConfirmationView(amount: .constant(0.0), transactions: [])
+        ConfirmationView(amount: 100.0, transactions: [])
     }
 }
 

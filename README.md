@@ -3,6 +3,14 @@
 This is the repository for Intro to iOS Development Assignment 3 - Semester 1, 2023 at UTS. 
 Split Mate is an app designed to make splitting costs between friends easy and efficient.
 
+<div style="background-color:red; color:white; padding:10px; border-radius: 5px;">
+  <h3>🔴 IMPORTANT NOTE</h3>
+  <p>Please use the demo account to view an account with existing transactions and a populated friend list.</p>
+   <p>New accounts can be created and friends can be added by email but they must have a Split Mate account.</p>
+  <p>📧 Email: demo@splitmate.com</p>
+  <p>🔒 Password: splitmate</p>
+</div>
+
 ## Group Members
 
 - Adrian Nikaeen (GAL1LAO)

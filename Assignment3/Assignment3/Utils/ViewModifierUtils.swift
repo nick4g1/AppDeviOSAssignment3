@@ -43,7 +43,7 @@ struct AlternateLabelStyle: ViewModifier {
     func body(content: Content) -> some View {
         content
             .font(.headline)
-            .foregroundColor(ColorUtils.buttonBackgroundColour)
+            .foregroundColor(.white)
             .frame(height: 55)
             .frame(maxWidth: .infinity)
             .background(Color(red: 0.7, green: 0.7, blue: 0.7))
@@ -113,7 +113,7 @@ struct NumberFieldStyle: ViewModifier {
             .multilineTextAlignment(.center)
             .font(.title)
             .frame(height: 55)
-            .foregroundColor(Color(red: 0.3, green: 0.5, blue: 0.3))
+            .foregroundColor(Color(red: 0.3, green: 0.6, blue: 0.3))
             .frame(maxWidth: 150)
             .padding(.horizontal)
             .keyboardType(.decimalPad)

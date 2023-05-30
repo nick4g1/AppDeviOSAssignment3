@@ -61,7 +61,7 @@ struct EmailSignInView: View {
                     EmailSignUpView(showSignInView: $showSignInView)
                 } label: {
                     Text("Don't have an account?")
-                        .subHeadingLabelStyle()
+                        .alternatelabelStyle()
                 }
                 Spacer()
                 // Alert that displays error message localizedDescription and has button to dismiess

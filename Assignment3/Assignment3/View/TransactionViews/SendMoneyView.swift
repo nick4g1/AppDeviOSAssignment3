@@ -45,7 +45,7 @@ struct SendMoneyView: View {
                     }
                         .alternatelabelStyle()
                     Spacer()
-                    Text("From Who?")
+                    Text("To Who?")
                         .font(.title)
                     // Here comes the scrollstack
                     FriendsScrollView(amount: $amount, selectedFriends: $selectedFriends, friends: friends, toSplit: false)

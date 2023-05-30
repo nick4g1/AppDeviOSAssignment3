@@ -162,7 +162,6 @@
 				9B2F9D932A23080D00C7B903 /* TransactionViews */,
 				9BAF451B2A0FAD37005C864B /* Core */,
 				9B5271AC2A0E080B00043141 /* Authentication */,
-				9BD272E52A235AD1005A0E42 /* ProfileView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -170,10 +169,9 @@
 		9B5271A52A0DDF5C00043141 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				9B9BA0F32A2595D200D9A855 /* Local */,
 				9B843C1F2A1753860002CDBE /* Firestore */,
 				9BAF451D2A0FAD68005C864B /* Authentication */,
-				9BC24CD62A0F37E300DC61F3 /* FriendModel.swift */,
-				9BAF45202A0FAF9F005C864B /* ProfileModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -195,6 +193,15 @@
 				9BD272DE2A1E154A005A0E42 /* TransactionManager.swift */,
 			);
 			path = Firestore;
+			sourceTree = "<group>";
+		};
+		9B9BA0F32A2595D200D9A855 /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				9BC24CD62A0F37E300DC61F3 /* FriendModel.swift */,
+				9BAF45202A0FAF9F005C864B /* ProfileModel.swift */,
+			);
+			path = Local;
 			sourceTree = "<group>";
 		};
 		9BA63AE72A0A184200CE3AA8 = {
@@ -243,6 +250,7 @@
 			children = (
 				9B5271A02A0DDB5500043141 /* InitialView.swift */,
 				9B5271A32A0DDE2F00043141 /* MainMenuView.swift */,
+				9BD272E52A235AD1005A0E42 /* ProfileView.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";

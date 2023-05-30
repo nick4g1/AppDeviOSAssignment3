@@ -1,3 +1,10 @@
+//
+//  SplitView.swift
+//  Assignment3
+//
+//  Created by Cooper Jacob on 13/5/2023.
+//
+
 import SwiftUI
 
 // View for splitting an amount with multiple friends

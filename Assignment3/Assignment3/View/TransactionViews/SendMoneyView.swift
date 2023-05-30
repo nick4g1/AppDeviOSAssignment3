@@ -8,18 +8,14 @@
 import SwiftUI
 
 struct SendMoneyView: View {
-    @State private var value = 0.0
-    private var numberFormatter: NumberFormatter
+    @State private var amount = 0.0
+
+    @FocusState private var amountIsFocused: Bool
     @StateObject private var viewModel = ProfileModel()
     //Friends
     @State private var selectedFriends: Set<String> = []
     @State var friends: [Friend] = []
-    //Initialize number formatter for CurrencyTextField
-    init(numberFormatter: NumberFormatter = NumberFormatter()) {
-        self.numberFormatter = numberFormatter
-        self.numberFormatter.numberStyle = .currency
-        self.numberFormatter.maximumFractionDigits = 2
-    }
+
 
     var body: some View {
         ZStack {
@@ -36,36 +32,35 @@ struct SendMoneyView: View {
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 35)
                     }
-
-                    //Title as navigation title
-                    //Creates text field using CurrencyTextField and NumberFormatter initialized above
-                    CurrencyTextField(numberFormatter: numberFormatter, value: $value)
-                        .padding(20)
-                        .overlay(RoundedRectangle(cornerRadius: 16)
-                            .stroke(Color.gray.opacity(0.3), lineWidth: 2))
-                        .frame(height: 100)
+                    HStack {
+                        Text("Amount:")
+                            .font(.title)
+                        TextField("Amount", value: $amount, format: .currency(code: "AUD"))
+                            .numberFieldStyle()
+                            .focused($amountIsFocused)
+                    }
+                        .alternatelabelStyle()
                     Spacer()
-                    Text("Friend List").frame(maxWidth: .infinity, alignment: .leading).font(.system(size: 30)).padding(.all)
+                    Text("From Who?")
+                        .font(.title)
                     // Here comes the scrollstack
-                    FriendsScrollView(amount: $value, selectedFriends: $selectedFriends, friends: friends, toSplit: false)
+                    FriendsScrollView(amount: $amount, selectedFriends: $selectedFriends, friends: friends, toSplit: false)
                     Spacer()
                     //Link to confirmation view
                     NavigationLink {
                         var transactions: [UserTransaction] {
                             var result: [UserTransaction] = []
                             for friend in selectedFriends {
-                                let transaction = UserTransaction(transactionId: "\(friend)\(Date())", amount: value / Double(selectedFriends.count), sendingAccount: user.email, recievingAccount: friend, date: Date())
+                                let transaction = UserTransaction(transactionId: "\(friend)\(Date())", amount: amount / Double(selectedFriends.count), sendingAccount: user.email, recievingAccount: friend, date: Date())
                                 result.append(transaction)
                             }
                             return result
                         }
-                        ConfirmationView(amount: $value, transactions: transactions)
+                        ConfirmationView(amount: $amount, transactions: transactions)
                     } label: {
                         Text("Send")
                             .sendReceiveStyle()
                     }
-                    //Check to make sure value is properly created
-                    Text(String(format: "Sending: $%.02f", value))
                 }
             }
         }
